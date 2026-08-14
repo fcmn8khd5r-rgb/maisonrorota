@@ -140,14 +140,39 @@ Toutes en CSS et JavaScript natif, dans `js/main.js` :
 `prefers-reduced-motion` est respecté : les animations sont neutralisées pour les personnes
 qui l'ont demandé dans leur système.
 
+## Décliner ce site pour un autre client
+
+Tout ce qui se répète ou se chiffre est centralisé dans **`config/site.json`** :
+marque, coordonnées, palette, navigation, catalogue des chambres, tarifs, options.
+
+```bash
+python3 build.py
+```
+
+régénère alors l'en-tête, le menu mobile et le pied de page des 10 pages, la palette
+CSS, les fiches de chambres, la grille tarifaire, les cartes de l'accueil et les
+données du moteur de réservation (`js/reservation-data.js`).
+
+Concrètement : **un prix ne s'écrit qu'à un seul endroit**. Avant, il fallait le
+changer dans `chambres.html` *et* dans `js/reservation.js` — avec le risque que les
+deux divergent.
+
+`python3 build.py --verifie` contrôle sans rien écrire.
+
+Le mode d'emploi complet est dans **[NOUVEAU-SITE.md](NOUVEAU-SITE.md)**.
+
 ## Structure
 
 ```
+├── config/site.json               ← tout ce qui change d'un client à l'autre
+├── build.py                       générateur : régénère à partir de la config
+├── NOUVEAU-SITE.md                mode d'emploi du gabarit
 ├── index.html … mentions.html     10 pages
 ├── css/style.css                  feuille commune, commentée par sections
 ├── css/reservation.css            styles du moteur (chargés sur cette page seule)
 ├── js/main.js                     comportements communs, sans dépendance
 ├── js/reservation.js              calendrier, disponibilités, tarification
+├── js/reservation-data.js         GÉNÉRÉ — catalogue et tarifs
 ├── assets/img/                    100 photos étalonnées et recadrées
 ├── assets/video/                  deux montages d'accueil, deux définitions chacun
 ├── make_video.py                  refabrique la vidéo « photos »
@@ -160,7 +185,7 @@ qui l'ont demandé dans leur système.
 - Les formulaires sont **inertes** : ils affichent une confirmation mais n'envoient rien.
   Pour les rendre fonctionnels, brancher un service de formulaire ou une API sur
   le gestionnaire `form[data-demo]` de `js/main.js`, et voir plus haut pour la réservation.
-- Les feuilles de style et scripts portent un `?v=6`. **Incrémentez-le** après chaque
+- Les feuilles de style et scripts portent un `?v=8`. **Incrémentez-le** après chaque
   modification de `css/` ou `js/`, sinon les navigateurs continueront de servir
   l'ancienne version depuis leur cache.
 - Les polices sont chargées depuis Google Fonts. Pour un site totalement autonome,

@@ -1,0 +1,458 @@
+{
+  "_lisezmoi": "Tout ce qui change d'un client à l'autre. Modifiez ce fichier puis lancez : python3 build.py",
+  "marque": {
+    "nom": "Maison Rorota",
+    "initiale": "R",
+    "lieu": "Rémire-Montjoly · Guyane",
+    "resume": "Hôtel &amp; Table, 20 chambres et suites.",
+    "piedDePage": "Site de démonstration"
+  },
+  "contact": {
+    "adresse": [
+      "Anse de Montjoly",
+      "97354 Rémire-Montjoly",
+      "Guyane française"
+    ],
+    "adresseCourte": "Anse de Montjoly, 97354 Rémire-Montjoly",
+    "telephone": "+594 594 00 00 00",
+    "telephoneLien": "+594594000000",
+    "courriel": "reservation@maison-rorota.gf"
+  },
+  "palette": {
+    "forest-900": "#0A1410",
+    "forest-800": "#0F1F18",
+    "forest-700": "#163024",
+    "forest-600": "#1E4132",
+    "forest-500": "#2B5844",
+    "ivory-100": "#FBF8F2",
+    "ivory-200": "#F4EFE4",
+    "ivory-300": "#E8E0D0",
+    "ivory-400": "#D6CAB4",
+    "brass-400": "#C9A96A",
+    "brass-500": "#B8944D",
+    "brass-600": "#9A7A3C",
+    "clay-500": "#A9613F",
+    "ink": "#12241C",
+    "muted": "#6E7C74"
+  },
+  "polices": {
+    "titre": "\"Cormorant Garamond\", \"Hoefler Text\", Garamond, \"Times New Roman\", serif",
+    "texte": "\"Jost\", \"Avenir Next\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "googleFonts": "Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500"
+  },
+  "navigation": [
+    {
+      "url": "chambres.html",
+      "libelle": "Chambres &amp; Suites"
+    },
+    {
+      "url": "restaurant.html",
+      "libelle": "La Table"
+    },
+    {
+      "url": "bien-etre.html",
+      "libelle": "Bien-être"
+    },
+    {
+      "url": "decouverte.html",
+      "libelle": "Découverte"
+    },
+    {
+      "url": "sejour.html",
+      "libelle": "Votre séjour"
+    },
+    {
+      "url": "galerie.html",
+      "libelle": "Galerie"
+    }
+  ],
+  "sejour": {
+    "arrivee": "15 h",
+    "depart": "12 h",
+    "mentionPied": "Arrivée 15 h · Départ 12 h · Non-fumeur",
+    "taxeSejour": 3.3,
+    "remisePrepaiement": 0.15,
+    "remisesSejourLong": [
+      {
+        "nuits": 10,
+        "taux": 0.15
+      },
+      {
+        "nuits": 5,
+        "taux": 0.1
+      }
+    ],
+    "basseSaison": {
+      "moisDebut": 4,
+      "moisFin": 6,
+      "libelle": "1er avril – 30 juin"
+    },
+    "hauteSaison": {
+      "libelle": "1er juillet – 31 mars"
+    },
+    "devise": "€"
+  },
+  "unites": [
+    {
+      "id": "wapa",
+      "rang": "01 — 8 chambres",
+      "nom": "Chambre Deluxe Wapa",
+      "specs": [
+        "42 m²",
+        "2 personnes",
+        "Rez-de-jardin",
+        "Vue jardin créole"
+      ],
+      "description": "Nommée d'après le wapa, ce bois rouge dont sont faits les parquets et les persiennes. Plain-pied sur le jardin, avec une terrasse privative de 12 m² meublée d'un hamac et de deux fauteuils. Le matin, les toucans s'installent dans le manguier d'en face.",
+      "equipements": [
+        "Lit king 180 × 200 ou lits jumeaux",
+        "Terrasse privative meublée, hamac",
+        "Douche à l'italienne en pierre",
+        "Double vasque, baignoire sur demande",
+        "Climatisation silencieuse + ventilateur",
+        "Bureau, coffre, minibar inclus"
+      ],
+      "prixMention": "la nuit · petit-déjeuner inclus",
+      "photo": {
+        "slot": "room-wapa",
+        "legende": "Chambre Deluxe Wapa : lit à baldaquin, fauteuils en rotin et table basse en bois massif"
+      },
+      "vignettes": [
+        {
+          "slot": "d-bath1",
+          "legende": "Double vasque en pierre de la salle de bain"
+        },
+        {
+          "slot": "d-wardrobe",
+          "legende": "Armoires en bois massif ouvrant sur la chambre"
+        },
+        {
+          "slot": "d-lounge",
+          "legende": "Coin salon avec banquette et persiennes"
+        }
+      ],
+      "inverse": false,
+      "nombre": 8,
+      "surface": 42,
+      "capacite": 2,
+      "prixBasse": 390,
+      "prixHaute": 470,
+      "resume": "Plain-pied sur le jardin, terrasse privative et hamac.",
+      "cta": "Réserver cette chambre"
+    },
+    {
+      "id": "atlantique",
+      "rang": "02 — 6 chambres",
+      "nom": "Chambre Prestige Atlantique",
+      "specs": [
+        "55 m²",
+        "2 personnes",
+        "Étage",
+        "Vue océan"
+      ],
+      "description": "À l'étage, sur la façade nord. La galerie court sur toute la longueur : 16 m² de balcon couvert, protégé de la pluie comme du soleil de midi, face à l'anse de Montjoly. C'est la chambre où l'on prend son petit-déjeuner dehors.",
+      "equipements": [
+        "Lit king 180 × 200",
+        "Galerie privative couverte de 16 m²",
+        "Baignoire îlot et douche séparée",
+        "Coin salon, dressing",
+        "Machine à espresso, cave à vin tempérée",
+        "Vue directe sur l'océan"
+      ],
+      "prixMention": "la nuit · petit-déjeuner inclus",
+      "photo": {
+        "slot": "room-atlantique",
+        "legende": "Chambre Prestige Atlantique, lit à baldaquin face aux portes-fenêtres"
+      },
+      "vignettes": [
+        {
+          "slot": "d-bath2",
+          "legende": "Baignoire îlot devant une fenêtre à petits carreaux"
+        },
+        {
+          "slot": "d-corridor",
+          "legende": "Galerie desservant les chambres"
+        },
+        {
+          "slot": "arch-jour",
+          "legende": "Façade blanche de la maison et sa galerie"
+        }
+      ],
+      "inverse": true,
+      "nombre": 6,
+      "surface": 55,
+      "capacite": 2,
+      "prixBasse": 540,
+      "prixHaute": 650,
+      "resume": "À l'étage, galerie couverte de 16 m² face à l'océan.",
+      "cta": "Réserver cette chambre"
+    },
+    {
+      "id": "awara",
+      "rang": "03 — 4 suites",
+      "nom": "Suite Junior Awara",
+      "specs": [
+        "78 m²",
+        "2 – 3 personnes",
+        "Angle",
+        "Vue océan & jardin"
+      ],
+      "description": "Quatre suites d'angle, une à chaque coin de la maison, avec un salon séparé et une terrasse de 30 m². Chacune possède sa baignoire extérieure, taillée dans un bloc de pierre et abritée sous les manguiers — l'endroit où finissent les journées de marche.",
+      "equipements": [
+        "Chambre et salon séparés",
+        "Terrasse d'angle de 30 m²",
+        "Baignoire extérieure en pierre",
+        "Dressing, double vasque, douche",
+        "Lit d'appoint possible",
+        "Nespresso, cave à vin, enceinte"
+      ],
+      "prixMention": "la nuit · petit-déjeuner inclus",
+      "photo": {
+        "slot": "suite-awara",
+        "legende": "Suite Junior Awara, lit à baldaquin drapé de mousseline blanche"
+      },
+      "vignettes": [
+        {
+          "slot": "d-salon",
+          "legende": "Salon séparé de la suite, banquette et table basse"
+        },
+        {
+          "slot": "d-bath3",
+          "legende": "Salle de bain de la suite, double vasque et miroirs"
+        },
+        {
+          "slot": "d-terrasse",
+          "legende": "Terrasse ombragée donnant sur le jardin"
+        }
+      ],
+      "inverse": false,
+      "nombre": 4,
+      "surface": 78,
+      "capacite": 3,
+      "prixBasse": 820,
+      "prixHaute": 980,
+      "resume": "Salon séparé, terrasse d'angle et baignoire extérieure en pierre.",
+      "cta": "Réserver cette suite"
+    },
+    {
+      "id": "canopee",
+      "rang": "04 — 1 suite signature",
+      "nom": "Suite Canopée",
+      "specs": [
+        "120 m²",
+        "2 – 4 personnes",
+        "Dernier niveau",
+        "Toit-terrasse"
+      ],
+      "description": "Elle occupe tout le dernier niveau de l'aile est. Son toit-terrasse privatif de 45 m² dépasse la cime des arbres : on y voit la canopée d'un côté, l'océan de l'autre, et rien d'autre. Bain à remous, lit de repos, table pour six.",
+      "equipements": [
+        "Toit-terrasse privatif de 45 m²",
+        "Bain à remous face à la canopée",
+        "Salon et salle à manger 6 couverts",
+        "Salle de bain double, hammam privatif",
+        "Service de majordome dédié",
+        "Dîner privé servi en terrasse sur demande"
+      ],
+      "prixMention": "la nuit · petit-déjeuner inclus",
+      "photo": {
+        "slot": "suite-canopee",
+        "legende": "Suite Canopée, lit à baldaquin et grandes armoires en bois"
+      },
+      "vignettes": [
+        {
+          "slot": "d-bibli",
+          "legende": "Bibliothèque de la maison"
+        },
+        {
+          "slot": "pool-2",
+          "legende": "Bassin bordé de pierre au crépuscule"
+        },
+        {
+          "slot": "d-bath1",
+          "legende": "Salle de bain double de la suite"
+        }
+      ],
+      "inverse": true,
+      "nombre": 1,
+      "surface": 120,
+      "capacite": 4,
+      "prixBasse": 1450,
+      "prixHaute": 1690,
+      "resume": "Tout le dernier niveau, toit-terrasse de 45 m² et bain à remous.",
+      "cta": "Réserver cette suite"
+    },
+    {
+      "id": "maripa",
+      "rang": "05 — 1 villa signature",
+      "nom": "Villa Maripa",
+      "specs": [
+        "140 m² + 200 m²",
+        "Jusqu'à 4 personnes",
+        "Indépendante",
+        "Bassin privé"
+      ],
+      "description": "À l'écart de la maison principale, derrière un mur de bambous, la villa a son entrée, son jardin clos et son bassin de nage de douze mètres. Deux chambres, une cuisine ouverte, et quelqu'un de la maison qui passe le matin et le soir — sans jamais s'imposer.",
+      "equipements": [
+        "Deux chambres, deux salles de bain",
+        "Bassin de nage privé de 12 m",
+        "Jardin clos et carbet couvert",
+        "Cuisine ouverte équipée",
+        "Service de maison matin et soir",
+        "Transfert aéroport et voiturier inclus"
+      ],
+      "prixMention": "la nuit · petit-déjeuner inclus",
+      "photo": {
+        "slot": "villa-maripa",
+        "legende": "Villa Maripa et son bassin de nage privé bordé de pierre"
+      },
+      "vignettes": [
+        {
+          "slot": "villa-chambre",
+          "legende": "Chambre de la villa, lit à baldaquin et armoires"
+        },
+        {
+          "slot": "d-salon",
+          "legende": "Séjour de la villa ouvert sur le jardin"
+        },
+        {
+          "slot": "d-bath2",
+          "legende": "Baignoire de la villa devant la fenêtre"
+        }
+      ],
+      "inverse": false,
+      "nombre": 1,
+      "surface": 140,
+      "capacite": 4,
+      "prixBasse": 1850,
+      "prixHaute": 2200,
+      "resume": "Villa indépendante, deux chambres et bassin de nage privé.",
+      "cta": "Réserver la villa"
+    }
+  ],
+  "options": [
+    {
+      "id": "demi",
+      "nom": "Demi-pension",
+      "desc": "Petit-déjeuner et dîner à La Table, hors boissons.",
+      "prix": 75,
+      "unite": "parJourParPersonne",
+      "exclut": "pension"
+    },
+    {
+      "id": "pension",
+      "nom": "Pension complète",
+      "desc": "Les trois repas, hors boissons.",
+      "prix": 130,
+      "unite": "parJourParPersonne",
+      "exclut": "demi"
+    },
+    {
+      "id": "transfert",
+      "nom": "Transfert aéroport aller-retour",
+      "desc": "Accueil à la sortie des bagages, véhicule privé.",
+      "prix": 130,
+      "unite": "forfait"
+    },
+    {
+      "id": "lit",
+      "nom": "Lit d'appoint",
+      "desc": "À partir de 3 ans. Lit bébé gratuit sur demande.",
+      "prix": 95,
+      "unite": "parNuit"
+    },
+    {
+      "id": "spa",
+      "nom": "Parcours Wassaï pour deux",
+      "desc": "Hammam, gommage, massage 60 min et déjeuner au bassin.",
+      "prix": 590,
+      "unite": "forfait"
+    },
+    {
+      "id": "salut",
+      "nom": "Journée aux Îles du Salut",
+      "desc": "Catamaran depuis Kourou, déjeuner sur l'île Royale.",
+      "prix": 195,
+      "unite": "parPersonne"
+    }
+  ],
+  "piedDePage": {
+    "colonnes": [
+      {
+        "titre": "La maison",
+        "liens": [
+          {
+            "url": "chambres.html",
+            "libelle": "Chambres &amp; suites"
+          },
+          {
+            "url": "restaurant.html",
+            "libelle": "La Table de Rorota"
+          },
+          {
+            "url": "bien-etre.html",
+            "libelle": "Spa Wassaï"
+          },
+          {
+            "url": "galerie.html",
+            "libelle": "Galerie"
+          }
+        ]
+      },
+      {
+        "titre": "Préparer",
+        "liens": [
+          {
+            "url": "decouverte.html",
+            "libelle": "Excursions"
+          },
+          {
+            "url": "sejour.html#valise",
+            "libelle": "Que mettre dans sa valise"
+          },
+          {
+            "url": "sejour.html#sante",
+            "libelle": "Santé &amp; vaccins"
+          },
+          {
+            "url": "sejour.html#reglement",
+            "libelle": "Règlement intérieur"
+          },
+          {
+            "url": "sejour.html#faq",
+            "libelle": "Questions fréquentes"
+          }
+        ]
+      },
+      {
+        "titre": "Informations",
+        "liens": [
+          {
+            "url": "reservation.html",
+            "libelle": "Réserver en ligne"
+          },
+          {
+            "url": "contact.html#acces",
+            "libelle": "Accès &amp; transferts"
+          },
+          {
+            "url": "sejour.html#annulation",
+            "libelle": "Conditions d'annulation"
+          },
+          {
+            "url": "mentions.html",
+            "libelle": "Mentions légales"
+          },
+          {
+            "url": "mentions.html#credits",
+            "libelle": "Crédits photo"
+          }
+        ]
+      }
+    ]
+  },
+  "vedettes": [
+    "wapa",
+    "awara",
+    "maripa"
+  ]
+}

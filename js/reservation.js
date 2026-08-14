@@ -13,44 +13,19 @@
   function $(s, c) { return (c || document).querySelector(s); }
   function $$(s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); }
 
-  /* ------------------------------------------------------------ catalogue */
-  var CATS = [
-    { id: "wapa", nom: "Chambre Deluxe Wapa", surface: 42, capacite: 2, stock: 8,
-      img: "room-wapa", basse: 390, haute: 470,
-      desc: "Plain-pied sur le jardin, terrasse privative et hamac." },
-    { id: "atlantique", nom: "Chambre Prestige Atlantique", surface: 55, capacite: 2, stock: 6,
-      img: "room-atlantique", basse: 540, haute: 650,
-      desc: "À l'étage, galerie couverte de 16 m² face à l'océan." },
-    { id: "awara", nom: "Suite Junior Awara", surface: 78, capacite: 3, stock: 4,
-      img: "suite-awara", basse: 820, haute: 980,
-      desc: "Salon séparé, terrasse d'angle et baignoire extérieure en pierre." },
-    { id: "canopee", nom: "Suite Canopée", surface: 120, capacite: 4, stock: 1,
-      img: "suite-canopee", basse: 1450, haute: 1690,
-      desc: "Tout le dernier niveau, toit-terrasse de 45 m² et bain à remous." },
-    { id: "maripa", nom: "Villa Maripa", surface: 140, capacite: 4, stock: 1,
-      img: "villa-maripa", basse: 1850, haute: 2200,
-      desc: "Villa indépendante, deux chambres et bassin de nage privé." }
-  ];
+  /* ------------------------------------------------------------ catalogue
+     Les données viennent de js/reservation-data.js, lui-même généré depuis
+     config/site.json par build.py. Rien de tarifaire n'est écrit ici. */
+  var D = window.ROROTA || {};
+  var CATS = D.CATS || [];
   var CAT = {};
   CATS.forEach(function (c) { CAT[c.id] = c; });
 
-  var OPTIONS = [
-    { id: "demi", nom: "Demi-pension", desc: "Petit-déjeuner et dîner à La Table, hors boissons.",
-      prix: 75, unite: "parJourParPersonne", exclut: "pension" },
-    { id: "pension", nom: "Pension complète", desc: "Les trois repas, hors boissons.",
-      prix: 130, unite: "parJourParPersonne", exclut: "demi" },
-    { id: "transfert", nom: "Transfert aéroport aller-retour", desc: "Accueil à la sortie des bagages, véhicule privé.",
-      prix: 130, unite: "forfait" },
-    { id: "lit", nom: "Lit d'appoint", desc: "À partir de 3 ans. Lit bébé gratuit sur demande.",
-      prix: 95, unite: "parNuit" },
-    { id: "spa", nom: "Parcours Wassaï pour deux", desc: "Hammam, gommage, massage 60 min et déjeuner au bassin.",
-      prix: 590, unite: "forfait" },
-    { id: "salut", nom: "Journée aux Îles du Salut", desc: "Catamaran depuis Kourou, déjeuner sur l'île Royale.",
-      prix: 195, unite: "parPersonne" }
-  ];
-
-  var TAXE = 3.30;                 // par adulte et par nuit
-  var REMISE_PREPAIEMENT = 0.15;   // tarif non remboursable
+  var OPTIONS = D.OPTIONS || [];
+  var TAXE = D.TAXE || 0;                        // par adulte et par nuit
+  var REMISE_PREPAIEMENT = D.REMISE_PREPAIEMENT || 0;
+  var REMISES = D.REMISES || [];
+  var SAISON = D.BASSE_SAISON || { moisDebut: 4, moisFin: 6 };
 
   /* ------------------------------------------------------------ état */
   var S = {
@@ -88,7 +63,10 @@
   }
 
   /* La grande saison des pluies (avril → juin) est la basse saison. */
-  function estBasseSaison(d) { var m = d.getMonth(); return m >= 3 && m <= 5; }
+  function estBasseSaison(d) {
+    var m = d.getMonth() + 1;                     // getMonth() est indexé à 0
+    return m >= SAISON.moisDebut && m <= SAISON.moisFin;
+  }
 
   /* ------------------------------------------- disponibilités simulées */
   function hash(s) {
@@ -136,8 +114,9 @@
     return t;
   }
   function tauxRemise() {
-    var n = nbNuits();
-    return n >= 10 ? 0.15 : n >= 5 ? 0.10 : 0;
+    var n = nbNuits(), t = 0;
+    REMISES.forEach(function (r) { if (n >= r.nuits) t = Math.max(t, r.taux); });
+    return t;
   }
   function nbNuits() {
     return (S.arrivee && S.depart) ? nuits(S.arrivee, S.depart) : 0;
