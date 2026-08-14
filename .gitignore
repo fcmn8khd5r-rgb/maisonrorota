@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Configuration d'éditeur / prévisualisation locale
+.claude/
+
+# Sources vidéo de travail (volumineuses, non nécessaires au site)
+vid/
+seg/
+
+# Sorties temporaires
+*.log

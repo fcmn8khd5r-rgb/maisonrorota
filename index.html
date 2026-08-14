@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maison Rorota — Hôtel &amp; Table d'exception, Rémire-Montjoly, Guyane</title>
+<meta name="description" content="Maison Rorota, hôtel 5 étoiles de 20 chambres et suites entre la forêt du Rorota et l'Atlantique, à Rémire-Montjoly, Guyane française. Table gastronomique, spa, excursions en Amazonie.">
+<meta name="theme-color" content="#0A1410">
+<meta property="og:title" content="Maison Rorota — Hôtel &amp; Table, Guyane">
+<meta property="og:description" content="20 clés d'exception entre forêt amazonienne et océan Atlantique.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=7">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A1410'/><text y='23' x='16' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%23C9A96A'>R</text></svg>">
+</head>
+<body>
+
+<!-- Écran d'ouverture -->
+<div class="loader" aria-hidden="true">
+  <div class="loader__mark">
+    <div class="loader__name">Maison Rorota</div>
+    <div class="loader__sub">Guyane française</div>
+    <div class="loader__bar"><i></i></div>
+  </div>
+</div>
+
+<div class="progress" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<!-- ================================================================ EN-TÊTE -->
+<header class="header">
+  <div class="header__inner">
+    <a class="brand" href="index.html" aria-label="Maison Rorota, accueil">
+      <span class="brand__name">Maison Rorota</span>
+      <span class="brand__sub">Rémire-Montjoly · Guyane</span>
+    </a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="chambres.html">Chambres &amp; Suites</a>
+      <a href="restaurant.html">La Table</a>
+      <a href="bien-etre.html">Bien-être</a>
+      <a href="decouverte.html">Découverte</a>
+      <a href="sejour.html">Votre séjour</a>
+      <a href="galerie.html">Galerie</a>
+    </nav>
+
+    <div class="header__cta">
+      <a class="btn" href="reservation.html">Réserver</a>
+    </div>
+
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-mobile">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Menu plein écran (mobile) -->
+<div class="mobile-nav" id="menu-mobile">
+  <ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="chambres.html">Chambres &amp; Suites</a></li>
+    <li><a href="restaurant.html">La Table</a></li>
+    <li><a href="bien-etre.html">Bien-être</a></li>
+    <li><a href="decouverte.html">Découverte</a></li>
+    <li><a href="sejour.html">Votre séjour</a></li>
+    <li><a href="galerie.html">Galerie</a></li>
+    <li><a href="reservation.html">Réserver</a></li>
+  </ul>
+  <div class="mobile-nav__foot">
+    <span>Anse de Montjoly, 97354 Rémire-Montjoly</span>
+    <span>+594 594 00 00 00</span>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- =================================================================== HERO -->
+<section class="hero">
+  <div class="hero__media">
+    <!-- L'image reste la base : elle s'affiche immédiatement et sert d'affiche.
+         La vidéo n'est téléchargée qu'ensuite, et seulement si le contexte s'y
+         prête (voir « vidéo du hero » dans js/main.js). -->
+    <img src="assets/img/hero-guyane.jpg" alt="La forêt amazonienne et une crique au couchant, vues du ciel" fetchpriority="high">
+
+    <!-- Deux montages sont livrés, au même étalonnage :
+         · hero-guyane-*  images réelles filmées en Guyane (par défaut)
+         · hero-photos-*  travelling sur les photos de la maison
+         Pour revenir au second, remplacer « guyane » par « photos » ci-dessous
+         et remettre l'affiche assets/img/hero-home.jpg sur l'image au-dessus. -->
+    <video class="hero__video" muted loop playsinline preload="none" aria-hidden="true"
+           poster="assets/img/hero-guyane.jpg"
+           data-src-lg="assets/video/hero-guyane-1440.mp4"
+           data-src-sm="assets/video/hero-guyane-960.mp4"></video>
+  </div>
+
+  <div class="hero__inner">
+    <p class="hero__loc">5° Nord · Guyane française</p>
+    <h1 class="h-display hero__title">
+      <span class="line-mask"><span>Vingt clés</span></span>
+      <span class="line-mask"><span class="serif-italic">entre forêt</span></span>
+      <span class="line-mask"><span>et Atlantique</span></span>
+    </h1>
+    <p class="hero__sub">
+      Une demeure créole restaurée sur l'anse de Montjoly, adossée à la forêt du Rorota.
+      Vingt chambres et suites, une table de saison, et l'Amazonie pour horizon.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--brass" href="reservation.html">Réserver un séjour</a>
+      <a class="btn btn--ghost" href="chambres.html">Découvrir les chambres</a>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">
+    <span>Défiler</span>
+    <span class="scroll-cue__line"></span>
+  </div>
+</section>
+
+<!-- ============================================================ RÉSERVATION -->
+<div class="wrap">
+  <form class="booking" action="reservation.html" method="get" aria-label="Vérifier les disponibilités">
+    <div class="field">
+      <label for="h-arr">Arrivée</label>
+      <input type="date" id="h-arr" name="arrivee" data-arrivee="#h-dep">
+    </div>
+    <div class="field">
+      <label for="h-dep">Départ</label>
+      <input type="date" id="h-dep" name="depart">
+    </div>
+    <div class="field">
+      <label for="h-pers">Voyageurs</label>
+      <select id="h-pers" name="adultes">
+        <option value="1">1 adulte</option>
+        <option value="2" selected>2 adultes</option>
+        <option value="3">3 adultes</option>
+        <option value="4">4 adultes</option>
+        <option value="5">5 adultes</option>
+        <option value="6">6 adultes</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="h-cat">Catégorie</label>
+      <select id="h-cat" name="cat">
+        <option value="">Toutes catégories</option>
+        <option value="wapa">Chambre Deluxe Wapa</option>
+        <option value="atlantique">Chambre Prestige Atlantique</option>
+        <option value="awara">Suite Junior Awara</option>
+        <option value="canopee">Suite Canopée</option>
+        <option value="maripa">Villa Maripa</option>
+      </select>
+    </div>
+    <button class="btn btn--brass" type="submit">Voir les disponibilités</button>
+  </form>
+</div>
+
+<!-- ================================================================= INTRO -->
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__media stack-media">
+        <div class="ph ratio-3-4 stack-media__main" data-reveal-img>
+          <img src="assets/img/intro-a.jpg" alt="Galerie intérieure de la Maison Rorota, boiseries et lanternes" loading="lazy">
+        </div>
+        <div class="ph ratio-1-1 stack-media__inset" data-reveal-img style="--d:.2s">
+          <img src="assets/img/intro-b.jpg" alt="Détail d'un salon : bois précieux, lin blanc et lumière tamisée" loading="lazy">
+        </div>
+      </div>
+
+      <div class="split__body" data-reveal>
+        <p class="eyebrow">La maison</p>
+        <h2 class="h2">
+          <span class="line-mask"><span>Une demeure de 1912,</span></span>
+          <span class="line-mask"><span class="serif-italic">rendue à la lumière</span></span>
+        </h2>
+        <p class="lead">
+          Bâtie pour un négociant en bois de rose, longtemps abandonnée à la végétation,
+          la Maison Rorota a retrouvé ses galeries, ses persiennes et ses parquets de wapa
+          après quatre années de restauration.
+        </p>
+        <p>
+          Nous avons gardé les volumes, la hauteur sous plafond, la fraîcheur des courants d'air
+          traversants — et ajouté ce que l'époque réclame : une table qui travaille les produits
+          du littoral, un spa ouvert sur le jardin, et une conciergerie qui connaît la Guyane
+          au-delà des cartes postales.
+        </p>
+        <p>
+          Vingt clés seulement. C'est peu, et c'est volontaire : de quoi vous reconnaître
+          au petit-déjeuner dès le deuxième matin.
+        </p>
+        <p style="margin-top:2rem">
+          <a class="link-u" href="contact.html">Nous écrire <span class="arw">&rarr;</span></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ CHIFFRES -->
+<section class="section section--tight on-dark">
+  <div class="wrap">
+    <div class="stats" data-stagger=".1">
+      <div class="stat" data-reveal>
+        <span class="stat__n" data-count="20">0</span>
+        <span class="stat__l">Chambres &amp; suites</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat__n" data-count="9" data-suffix=" ha">0</span>
+        <span class="stat__l">De jardin et de forêt</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat__n" data-count="300" data-suffix=" m">0</span>
+        <span class="stat__l">De l'anse de Montjoly</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat__n" data-count="20" data-suffix=" min">0</span>
+        <span class="stat__l">De l'aéroport de Cayenne</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== CHAMBRES -->
+<section class="section">
+  <div class="wrap">
+    <div class="center" data-reveal style="margin-bottom: clamp(3rem,6vw,5rem)">
+      <p class="eyebrow is-centered">Chambres &amp; suites</p>
+      <h2 class="h2">Cinq manières d'habiter la maison</h2>
+      <p class="lead" style="max-width:56ch">
+        De la chambre sur jardin à la villa avec bassin privé, toutes ouvrent sur l'extérieur
+        et partagent le même vocabulaire : bois massif, lin lavé, ventilateur au plafond.
+      </p>
+    </div>
+
+    <div class="grid grid-3" data-stagger=".1">
+      <article class="card" data-reveal>
+        <div class="ph card__media ratio-4-5" data-reveal-img>
+          <span class="card__tag">8 chambres</span>
+          <img src="assets/img/room-wapa.jpg" alt="Chambre Deluxe Wapa, lit à baldaquin et fauteuils en rotin" loading="lazy">
+        </div>
+        <h3 class="h3 card__title">Chambre Deluxe Wapa</h3>
+        <p class="card__meta">42 m² · Vue jardin créole</p>
+        <p class="card__desc">Plein pied sur le jardin, terrasse privative meublée et douche à l'italienne en pierre de Kourou.</p>
+        <div class="card__foot">
+          <span class="card__price">390 €<small>La nuit, dès</small></span>
+          <a class="link-u" href="chambres.html#wapa">Voir <span class="arw">&rarr;</span></a>
+        </div>
+      </article>
+
+      <article class="card" data-reveal>
+        <div class="ph card__media ratio-4-5" data-reveal-img>
+          <span class="card__tag">4 suites</span>
+          <img src="assets/img/suite-awara.jpg" alt="Suite Junior Awara, lit à baldaquin drapé de mousseline" loading="lazy">
+        </div>
+        <h3 class="h3 card__title">Suite Junior Awara</h3>
+        <p class="card__meta">78 m² · Vue océan</p>
+        <p class="card__desc">Salon séparé, vaste terrasse d'angle et baignoire en plein air abritée sous les manguiers.</p>
+        <div class="card__foot">
+          <span class="card__price">820 €<small>La nuit, dès</small></span>
+          <a class="link-u" href="chambres.html#awara">Voir <span class="arw">&rarr;</span></a>
+        </div>
+      </article>
+
+      <article class="card" data-reveal>
+        <div class="ph card__media ratio-4-5" data-reveal-img>
+          <span class="card__tag">Signature</span>
+          <img src="assets/img/villa-maripa.jpg" alt="Villa Maripa et son bassin privé bordé de pierre" loading="lazy">
+        </div>
+        <h3 class="h3 card__title">Villa Maripa</h3>
+        <p class="card__meta">140 m² · Bassin privé</p>
+        <p class="card__desc">Notre villa indépendante, deux chambres, bassin de nage à débordement et service de maison dédié.</p>
+        <div class="card__foot">
+          <span class="card__price">1 850 €<small>La nuit, dès</small></span>
+          <a class="link-u" href="chambres.html#maripa">Voir <span class="arw">&rarr;</span></a>
+        </div>
+      </article>
+    </div>
+
+    <p class="center" style="margin-top: clamp(2.5rem,5vw,4rem)" data-reveal>
+      <a class="btn" href="chambres.html">Les 20 chambres et suites</a>
+    </p>
+  </div>
+</section>
+
+<!-- =============================================================== BANDEAU -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Forêt primaire</span><span>Table de saison</span><span>Tortues luth</span><span>Spa Wassaï</span>
+    <span>Îles du Salut</span><span>Bassin à débordement</span><span>Marais de Kaw</span><span>Conciergerie</span>
+    <span>Forêt primaire</span><span>Table de saison</span><span>Tortues luth</span><span>Spa Wassaï</span>
+    <span>Îles du Salut</span><span>Bassin à débordement</span><span>Marais de Kaw</span><span>Conciergerie</span>
+  </div>
+</div>
+
+<!-- ============================================================ RESTAURANT -->
+<section class="section on-forest">
+  <div class="wrap">
+    <div class="split split--reverse">
+      <div class="split__media">
+        <div class="ph ratio-4-5" data-reveal-img>
+          <img src="assets/img/table-salle.jpg" alt="La salle du restaurant, tables rondes nappées de blanc et portes-fenêtres ouvertes" loading="lazy">
+        </div>
+      </div>
+      <div class="split__body" data-reveal>
+        <p class="eyebrow">La Table de Rorota</p>
+        <h2 class="h2">
+          <span class="line-mask"><span>Des plats simples,</span></span>
+          <span class="line-mask"><span class="serif-italic">très bien faits</span></span>
+        </h2>
+        <p class="lead">
+          Pas de démonstration. Un poisson pêché le matin à Rémire, un poulet rôti au feu de bois,
+          des légumes du maraîcher de Matoury — et le temps qu'il faut pour bien les cuire.
+        </p>
+        <ul class="ticks ticks--2" style="margin: 2rem 0">
+          <li>Petit-déjeuner créole 6 h 30 – 10 h 30</li>
+          <li>Déjeuner 12 h – 14 h 30</li>
+          <li>Dîner 19 h – 22 h</li>
+          <li>Bar Le Comptoir jusqu'à minuit</li>
+          <li>Service en chambre 24 h/24</li>
+          <li>Table du chef, 8 couverts</li>
+        </ul>
+        <a class="link-u" href="restaurant.html">Voir la carte <span class="arw">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= DÉCOUVERTE -->
+<section class="section">
+  <div class="wrap">
+    <div class="center" data-reveal style="margin-bottom: clamp(3rem,6vw,4.5rem)">
+      <p class="eyebrow is-centered">Découverte</p>
+      <h2 class="h2">La Guyane commence au bout de l'allée</h2>
+      <p class="lead" style="max-width:58ch">
+        Le sentier du Rorota part à dix minutes à pied. Les Îles du Salut sont à une heure de route
+        et vingt minutes de mer. Entre les deux, il y a un continent de forêt.
+      </p>
+    </div>
+
+    <div class="exc-grid" data-stagger=".08">
+      <a class="exc ph ratio-3-4" href="decouverte.html#salut" data-reveal-img>
+        <img src="assets/img/exc-salut.jpg" alt="Les Îles du Salut au large de Kourou" loading="lazy">
+        <span class="exc__veil"></span>
+        <span class="exc__body">
+          <span class="exc__kicker">Journée · en mer</span>
+          <span class="exc__title">Les Îles du Salut</span>
+          <span class="exc__meta">195 € par personne</span>
+          <span class="exc__more">L'île Royale, l'île Saint-Joseph et le bagne rendu à la végétation. Départ en bateau depuis Kourou, déjeuner sur place.</span>
+        </span>
+      </a>
+
+      <a class="exc ph ratio-3-4" href="decouverte.html#kaw" data-reveal-img>
+        <img src="assets/img/exc-kaw.jpg" alt="Les marais de Kaw au lever du jour" loading="lazy">
+        <span class="exc__veil"></span>
+        <span class="exc__body">
+          <span class="exc__kicker">2 jours · nuit en carbet</span>
+          <span class="exc__title">Les marais de Kaw</span>
+          <span class="exc__meta">290 € par personne</span>
+          <span class="exc__more">Sortie nocturne à la recherche des caïmans noirs, nuit en hamac sur l'eau, réveil dans la brume et les ibis rouges.</span>
+        </span>
+      </a>
+
+      <a class="exc ph ratio-3-4" href="decouverte.html#tortues" data-reveal-img>
+        <img src="assets/img/exc-tortues.jpg" alt="Tortue luth regagnant la mer après la ponte" loading="lazy">
+        <span class="exc__veil"></span>
+        <span class="exc__body">
+          <span class="exc__kicker">Avril à juillet · nuit</span>
+          <span class="exc__title">La ponte des tortues luth</span>
+          <span class="exc__meta">65 € par personne</span>
+          <span class="exc__more">Sur la plage de Montjoly, à 300 mètres de la maison, accompagné d'un guide naturaliste agréé. Sans lumière, sans flash.</span>
+        </span>
+      </a>
+    </div>
+
+    <p class="center" style="margin-top: clamp(2.5rem,5vw,4rem)" data-reveal>
+      <a class="btn" href="decouverte.html">Toutes les excursions</a>
+    </p>
+  </div>
+</section>
+
+<!-- =============================================================== BIEN-ÊTRE -->
+<section class="section on-dark">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__media">
+        <div class="ph ratio-4-3" data-reveal-img>
+          <img src="assets/img/spa-bassin.jpg" alt="Le bassin intérieur du spa sous charpente apparente" loading="lazy">
+        </div>
+      </div>
+      <div class="split__body" data-reveal>
+        <p class="eyebrow">Spa Wassaï</p>
+        <h2 class="h2">Le contrepoint de la forêt</h2>
+        <p class="lead">
+          Trois cabines, un bassin d'eau froide, un hammam et un sauna. Les soins font appel
+          au wassaï, au roucou et au beurre de karité — travaillés par une maison de Cayenne.
+        </p>
+        <ul class="ticks" style="margin: 2rem 0">
+          <li>Massage aux huiles chaudes de Guyane — 60 min, 130 €</li>
+          <li>Rituel après-forêt, jambes lourdes — 45 min, 105 €</li>
+          <li>Soin du visage au roucou — 60 min, 140 €</li>
+          <li>Accès libre au bassin, hammam et sauna pour les résidents</li>
+        </ul>
+        <a class="link-u" href="bien-etre.html">Découvrir le spa <span class="arw">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== AVIS -->
+<section class="section section--tight">
+  <div class="wrap wrap--narrow">
+    <div class="center" data-reveal>
+      <p class="eyebrow is-centered">Ils y ont séjourné</p>
+    </div>
+    <div class="quotes" data-reveal>
+      <figure class="quote">
+        <blockquote>On dort fenêtres ouvertes, réveillé par les singes hurleurs.</blockquote>
+        <cite>Claire &amp; Antoine D. — Lyon, septembre</cite>
+      </figure>
+      <figure class="quote">
+        <blockquote>La meilleure dorade de ma vie, servie sans esbroufe.</blockquote>
+        <cite>M. Sylvestre — Fort-de-France, mars</cite>
+      </figure>
+      <figure class="quote">
+        <blockquote>Vingt chambres, et pourtant on a l'impression d'être chez soi.</blockquote>
+        <cite>Famille Berthaud — Nantes, juillet</cite>
+      </figure>
+      <figure class="quote">
+        <blockquote>Ils nous ont trouvé un guide pour Kaw en une heure, un dimanche.</blockquote>
+        <cite>Dr. N. Adjovi — Paris, novembre</cite>
+      </figure>
+    </div>
+    <div class="quotes__dots" role="tablist" aria-label="Choisir un avis"></div>
+  </div>
+</section>
+
+<!-- ============================================================ APPEL FINAL -->
+<section class="cta-band">
+  <div class="cta-band__media">
+    <img src="assets/img/cta-band.jpg" alt="Le bassin à débordement de la Maison Rorota au crépuscule" loading="lazy">
+  </div>
+  <div class="cta-band__inner wrap wrap--narrow">
+    <p class="eyebrow is-centered" data-reveal>Réservation</p>
+    <h2 class="h1" data-reveal>Il reste de la place<br><span class="serif-italic">en saison sèche</span></h2>
+    <p class="lead" data-reveal style="margin: 0 auto 2.5rem; max-width: 48ch; color: rgba(251,248,242,.82)">
+      Juillet à novembre, la forêt est praticable et le ciel dégagé.
+      C'est aussi la période où les places partent le plus vite.
+    </p>
+    <p data-reveal>
+      <a class="btn btn--brass" href="reservation.html">Vérifier les disponibilités</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================ PIED DE PAGE -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="brand__name">Maison Rorota</span>
+        <p>
+          Hôtel &amp; Table, 20 chambres et suites.<br>
+          Anse de Montjoly, 97354 Rémire-Montjoly<br>
+          Guyane française
+        </p>
+        <p style="margin-top:1.2rem">
+          <a href="tel:+594594000000">+594 594 00 00 00</a><br>
+          <a href="mailto:reservation@maison-rorota.gf">reservation@maison-rorota.gf</a>
+        </p>
+      </div>
+
+      <div>
+        <h4>La maison</h4>
+        <ul>
+          <li><a href="chambres.html">Chambres &amp; suites</a></li>
+          <li><a href="restaurant.html">La Table de Rorota</a></li>
+          <li><a href="bien-etre.html">Spa Wassaï</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Préparer</h4>
+        <ul>
+          <li><a href="decouverte.html">Excursions</a></li>
+          <li><a href="sejour.html#valise">Que mettre dans sa valise</a></li>
+          <li><a href="sejour.html#sante">Santé &amp; vaccins</a></li>
+          <li><a href="sejour.html#reglement">Règlement intérieur</a></li>
+          <li><a href="sejour.html#faq">Questions fréquentes</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Informations</h4>
+        <ul>
+          <li><a href="reservation.html">Réserver</a></li>
+          <li><a href="contact.html#acces">Accès &amp; transferts</a></li>
+          <li><a href="sejour.html#annulation">Conditions d'annulation</a></li>
+          <li><a href="mentions.html">Mentions légales</a></li>
+          <li><a href="mentions.html#credits">Crédits photo</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> Maison Rorota — Site de démonstration</span>
+      <span>Arrivée 15 h · Départ 12 h · Non-fumeur</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js?v=7"></script>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Réservation en ligne — Maison Rorota, Guyane</title>
+<meta name="description" content="Réservez votre séjour à la Maison Rorota en quelques minutes : disponibilités en temps réel, choix de la chambre, options et paiement sécurisé.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0A1410">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=7">
+<link rel="stylesheet" href="css/reservation.css?v=7">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A1410'/><text y='23' x='16' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%23C9A96A'>R</text></svg>">
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<header class="header is-solid">
+  <div class="header__inner">
+    <a class="brand" href="index.html" aria-label="Maison Rorota, accueil">
+      <span class="brand__name">Maison Rorota</span>
+      <span class="brand__sub">Rémire-Montjoly · Guyane</span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="chambres.html">Chambres &amp; Suites</a>
+      <a href="restaurant.html">La Table</a>
+      <a href="bien-etre.html">Bien-être</a>
+      <a href="decouverte.html">Découverte</a>
+      <a href="sejour.html">Votre séjour</a>
+      <a href="galerie.html">Galerie</a>
+    </nav>
+    <div class="header__cta"><a class="btn" href="contact.html">Nous écrire</a></div>
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-mobile">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="menu-mobile">
+  <ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="chambres.html">Chambres &amp; Suites</a></li>
+    <li><a href="restaurant.html">La Table</a></li>
+    <li><a href="bien-etre.html">Bien-être</a></li>
+    <li><a href="decouverte.html">Découverte</a></li>
+    <li><a href="sejour.html">Votre séjour</a></li>
+    <li><a href="galerie.html">Galerie</a></li>
+    <li><a href="reservation.html">Réserver</a></li>
+  </ul>
+  <div class="mobile-nav__foot">
+    <span>Anse de Montjoly, 97354 Rémire-Montjoly</span>
+    <span>+594 594 00 00 00</span>
+  </div>
+</div>
+
+<main id="main" style="padding-top: var(--header-h)">
+
+<section class="section section--tight" style="padding-bottom:0">
+  <div class="wrap">
+    <p class="crumb"><a href="index.html">Accueil</a> &nbsp;/&nbsp; Réservation</p>
+    <h1 class="h1" style="margin-bottom:.6rem">Réserver <span class="serif-italic">en direct</span></h1>
+    <p class="lead" style="max-width:58ch">
+      Disponibilités à la nuit, meilleur tarif garanti, confirmation immédiate.
+      Aucun intermédiaire, aucune commission.
+    </p>
+  </div>
+</section>
+
+<section class="book">
+  <div class="wrap">
+
+    <!-- ====================================================== FIL D'ÉTAPES -->
+    <nav class="steps" aria-label="Étapes de la réservation">
+      <button class="step is-current" type="button" data-goto="1"><span class="step__n">1</span> Dates</button>
+      <button class="step" type="button" data-goto="2"><span class="step__n">2</span> Chambre</button>
+      <button class="step" type="button" data-goto="3"><span class="step__n">3</span> Options</button>
+      <button class="step" type="button" data-goto="4"><span class="step__n">4</span> Paiement</button>
+    </nav>
+
+    <div class="book__grid">
+      <div>
+
+        <!-- ======================================= ÉTAPE 1 — DATES -->
+        <section class="panel-step is-active" data-step="1" aria-label="Choix des dates">
+          <h2 class="h3 step-title">Quand souhaitez-vous venir ?</h2>
+          <p class="step-intro" id="dates-resume">Choisissez votre date d'arrivée dans le calendrier.</p>
+
+          <div class="cal-nav">
+            <button class="cal-nav__btn" id="cal-prev" type="button" aria-label="Mois précédent">&#8249;</button>
+            <span style="font-size:.66rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted)">
+              Sélectionnez l'arrivée puis le départ
+            </span>
+            <button class="cal-nav__btn" id="cal-next" type="button" aria-label="Mois suivant">&#8250;</button>
+          </div>
+
+          <div class="cal-months" id="cal-months"></div>
+          <p class="err" id="cal-err" hidden></p>
+
+          <div class="cal-legend">
+            <span><i class="i-libre"></i> Disponible</span>
+            <span><i class="i-tendu"></i> Dernières clés</span>
+            <span><i class="i-complet"></i> Complet</span>
+          </div>
+
+          <div class="form-row" style="margin-top:2.5rem; max-width:520px">
+            <div class="field">
+              <label for="sel-adultes">Adultes</label>
+              <select id="sel-adultes">
+                <option>1</option><option selected>2</option><option>3</option><option>4</option>
+                <option>5</option><option>6</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="sel-enfants">Enfants (moins de 12 ans)</label>
+              <select id="sel-enfants">
+                <option selected>0</option><option>1</option><option>2</option><option>3</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="book-nav">
+            <button class="btn btn--brass" type="button" data-suivant disabled>Choisir une chambre</button>
+          </div>
+        </section>
+
+        <!-- ===================================== ÉTAPE 2 — CHAMBRE -->
+        <section class="panel-step" data-step="2" aria-label="Choix de la chambre">
+          <h2 class="h3 step-title">Nos chambres disponibles</h2>
+          <p class="step-intro">Les prix affichés couvrent la totalité du séjour, petit-déjeuner créole compris.</p>
+
+          <div id="liste-chambres"></div>
+
+          <div class="note" id="aucune-chambre" hidden>
+            <strong>Rien ne correspond à votre demande.</strong> Essayez d'autres dates, ou
+            réduisez le nombre de voyageurs. Vous pouvez aussi
+            <a href="contact.html" style="text-decoration:underline">nous écrire</a> :
+            il nous arrive de libérer des clés.
+          </div>
+
+          <div class="book-nav">
+            <button class="btn btn--ghost" type="button" data-precedent>Retour aux dates</button>
+            <button class="btn btn--brass" type="button" data-suivant disabled>Continuer</button>
+          </div>
+        </section>
+
+        <!-- ===================================== ÉTAPE 3 — OPTIONS -->
+        <section class="panel-step" data-step="3" aria-label="Options et coordonnées">
+          <h2 class="h3 step-title">Souhaitez-vous ajouter quelque chose ?</h2>
+          <p class="step-intro">Tout reste modifiable jusqu'à 48 heures avant l'arrivée.</p>
+
+          <div class="opt-list" id="liste-options"></div>
+
+          <h2 class="h3 step-title" style="margin-top:3rem">Vos coordonnées</h2>
+          <p class="step-intro">Pour la confirmation et, le cas échéant, l'organisation de votre transfert.</p>
+
+          <form class="form" id="form-contact" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="r-prenom">Prénom</label>
+                <input type="text" id="r-prenom" name="prenom" autocomplete="given-name" required>
+              </div>
+              <div class="field">
+                <label for="r-nom">Nom</label>
+                <input type="text" id="r-nom" name="nom" autocomplete="family-name" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="r-mail">Courriel</label>
+                <input type="email" id="r-mail" name="email" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="r-tel">Téléphone</label>
+                <input type="tel" id="r-tel" name="tel" autocomplete="tel" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="r-msg">Demande particulière (facultatif)</label>
+              <textarea id="r-msg" name="message" placeholder="Heure d'arrivée, régime alimentaire, occasion à fêter, chambre voisine…"></textarea>
+            </div>
+          </form>
+
+          <div class="book-nav">
+            <button class="btn btn--ghost" type="button" data-precedent>Retour aux chambres</button>
+            <button class="btn btn--brass" type="button" data-suivant disabled>Aller au paiement</button>
+          </div>
+        </section>
+
+        <!-- ==================================== ÉTAPE 4 — PAIEMENT -->
+        <section class="panel-step" data-step="4" aria-label="Paiement">
+          <h2 class="h3 step-title">Comment souhaitez-vous régler ?</h2>
+          <p class="step-intro">Le montant total de votre séjour s'élève à <strong id="pay-total">—</strong>.</p>
+
+          <div class="pay-choice">
+            <label class="pay-opt is-on">
+              <input type="radio" name="pay-mode" value="flexible" checked>
+              <span>
+                <span class="pay-opt__name">Tarif flexible</span>
+                <span class="pay-opt__desc">
+                  Aucun débit aujourd'hui : une simple empreinte de carte garantit la réservation.
+                  Annulation sans frais jusqu'à 7 jours avant l'arrivée (14 jours en haute saison).
+                  Vous réglez sur place.
+                </span>
+              </span>
+            </label>
+
+            <label class="pay-opt">
+              <input type="radio" name="pay-mode" value="prepaye">
+              <span>
+                <span class="pay-opt__name">Tarif prépayé <span class="pay-opt__tag">−15 %</span></span>
+                <span class="pay-opt__desc">
+                  Paiement intégral immédiat, soit <strong id="pay-eco">—</strong> d'économie.
+                  Non modifiable et non remboursable.
+                </span>
+              </span>
+            </label>
+          </div>
+
+          <div class="card-box">
+            <div class="card-box__head">
+              <h3 class="h4" style="margin:0">Carte bancaire</h3>
+              <div class="card-brands" aria-label="Cartes acceptées">
+                <svg viewBox="0 0 48 30" role="img" aria-label="Visa"><rect width="48" height="30" rx="3" fill="currentColor" opacity=".12"/><text x="24" y="20" text-anchor="middle" font-family="Helvetica,Arial" font-size="11" font-weight="bold" fill="currentColor">VISA</text></svg>
+                <svg viewBox="0 0 48 30" role="img" aria-label="Mastercard"><rect width="48" height="30" rx="3" fill="currentColor" opacity=".12"/><circle cx="20" cy="15" r="8" fill="currentColor" opacity=".55"/><circle cx="28" cy="15" r="8" fill="currentColor" opacity=".35"/></svg>
+                <svg viewBox="0 0 48 30" role="img" aria-label="American Express"><rect width="48" height="30" rx="3" fill="currentColor" opacity=".12"/><text x="24" y="19" text-anchor="middle" font-family="Helvetica,Arial" font-size="8" font-weight="bold" fill="currentColor">AMEX</text></svg>
+              </div>
+            </div>
+
+            <div class="demo-banner">
+              <span class="demo-banner__ico" aria-hidden="true">⚠</span>
+              <span>
+                <strong>Démonstration — ne saisissez aucune vraie coordonnée bancaire.</strong>
+                Ce site est une maquette : rien n'est transmis, enregistré ni débité, et aucun
+                paiement réel ne peut aboutir. Les champs ci-dessous illustrent uniquement le
+                parcours. Pour un usage réel, ce bloc doit être remplacé par les champs hébergés
+                d'un prestataire de paiement (Stripe, Adyen…), seule façon d'être conforme à la
+                norme PCI DSS.
+              </span>
+            </div>
+
+            <form class="form" id="form-paiement" novalidate autocomplete="off">
+              <div class="field">
+                <label for="c-nom">Nom du porteur</label>
+                <input type="text" id="c-nom" placeholder="TEL QU'IL FIGURE SUR LA CARTE" autocomplete="off" required>
+              </div>
+              <div class="field">
+                <label for="c-num">Numéro de carte</label>
+                <input type="text" id="c-num" inputmode="numeric" placeholder="4242 4242 4242 4242"
+                       autocomplete="off" minlength="19" maxlength="19" required>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label for="c-exp">Expiration</label>
+                  <input type="text" id="c-exp" inputmode="numeric" placeholder="MM/AA"
+                         autocomplete="off" minlength="5" maxlength="5" required>
+                </div>
+                <div class="field">
+                  <label for="c-cvc">Cryptogramme</label>
+                  <input type="text" id="c-cvc" inputmode="numeric" placeholder="123"
+                         autocomplete="off" minlength="3" maxlength="4" required>
+                </div>
+              </div>
+
+              <label class="checkbox" for="c-cgv" style="margin-top:.5rem">
+                <input type="checkbox" id="c-cgv" required>
+                <span>
+                  J'accepte les conditions de vente et la
+                  <a href="sejour.html#annulation" style="text-decoration:underline">politique d'annulation</a>,
+                  ainsi que le <a href="sejour.html#reglement" style="text-decoration:underline">règlement intérieur</a>.
+                </span>
+              </label>
+            </form>
+          </div>
+
+          <div class="book-nav">
+            <button class="btn btn--ghost" type="button" data-precedent>Retour aux options</button>
+            <button class="btn btn--brass" type="button" data-suivant>Confirmer et payer</button>
+          </div>
+        </section>
+
+        <!-- ================================= ÉTAPE 5 — CONFIRMATION -->
+        <section class="panel-step" data-step="5" aria-label="Confirmation">
+          <div class="done">
+            <div class="done__seal" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M4 12.5l5.2 5.2L20 7"/>
+              </svg>
+            </div>
+            <p class="eyebrow is-centered">Réservation confirmée</p>
+            <h2 class="h2">Nous vous attendons</h2>
+            <p class="done__ref" id="done-ref">RRT-—</p>
+            <p class="lead" style="max-width:46ch; margin-inline:auto">
+              Un courriel de confirmation vient de partir. La conciergerie vous écrira
+              sous 48 heures pour préparer votre arrivée et vos excursions.
+            </p>
+
+            <div class="done__recap" id="done-recap"></div>
+
+            <div class="note" style="max-width:520px; margin:2rem auto 0; text-align:left">
+              <strong>Rappel : ceci est une démonstration.</strong> Aucune réservation n'a été
+              enregistrée, aucun paiement n'a été effectué et aucun courriel n'a été envoyé.
+            </div>
+
+            <p style="margin-top:2.5rem; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap">
+              <a class="btn" href="sejour.html">Préparer mon séjour</a>
+              <a class="btn btn--ghost" href="decouverte.html">Voir les excursions</a>
+            </p>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- ==================================================== RÉCAPITULATIF -->
+      <aside class="summary" id="col-recap" aria-label="Récapitulatif">
+        <h3>Votre séjour</h3>
+        <div id="recap-corps">
+          <p class="summary__empty">Sélectionnez vos dates pour voir le détail du prix.</p>
+        </div>
+        <div class="summary__sep"></div>
+        <p class="summary__total"><span>Total</span> <b id="recap-total">0 €</b></p>
+        <button class="btn btn--brass" type="button" id="recap-cta" disabled>Choisir une chambre</button>
+        <p class="summary__note">
+          Taxes comprises. Petit-déjeuner créole inclus dans toutes les catégories.
+          Meilleur tarif garanti en réservant en direct.
+        </p>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="brand__name">Maison Rorota</span>
+        <p>
+          Hôtel &amp; Table, 20 chambres et suites.<br>
+          Anse de Montjoly, 97354 Rémire-Montjoly<br>
+          Guyane française
+        </p>
+        <p style="margin-top:1.2rem">
+          <a href="tel:+594594000000">+594 594 00 00 00</a><br>
+          <a href="mailto:reservation@maison-rorota.gf">reservation@maison-rorota.gf</a>
+        </p>
+      </div>
+      <div>
+        <h4>La maison</h4>
+        <ul>
+          <li><a href="chambres.html">Chambres &amp; suites</a></li>
+          <li><a href="restaurant.html">La Table de Rorota</a></li>
+          <li><a href="bien-etre.html">Spa Wassaï</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Préparer</h4>
+        <ul>
+          <li><a href="decouverte.html">Excursions</a></li>
+          <li><a href="sejour.html#valise">Que mettre dans sa valise</a></li>
+          <li><a href="sejour.html#sante">Santé &amp; vaccins</a></li>
+          <li><a href="sejour.html#reglement">Règlement intérieur</a></li>
+          <li><a href="sejour.html#faq">Questions fréquentes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Informations</h4>
+        <ul>
+          <li><a href="reservation.html">Réserver en ligne</a></li>
+          <li><a href="contact.html#acces">Accès &amp; transferts</a></li>
+          <li><a href="sejour.html#annulation">Conditions d'annulation</a></li>
+          <li><a href="mentions.html">Mentions légales</a></li>
+          <li><a href="mentions.html#credits">Crédits photo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> Maison Rorota — Site de démonstration</span>
+      <span>Arrivée 15 h · Départ 12 h · Non-fumeur</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js?v=7"></script>
+<script src="js/reservation.js?v=7"></script>
+</body>
+</html>

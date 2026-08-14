@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Découverte — Explorer la Guyane depuis la Maison Rorota</title>
+<meta name="description" content="Îles du Salut, marais de Kaw, ponte des tortues luth, Centre Spatial Guyanais, sentier du Rorota : toutes les excursions organisées par la conciergerie de la Maison Rorota.">
+<meta name="theme-color" content="#0A1410">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=7">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A1410'/><text y='23' x='16' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%23C9A96A'>R</text></svg>">
+<style>
+  /* Filtres de la page découverte */
+  .filters { display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center; margin-bottom:clamp(2.5rem,5vw,3.5rem); }
+  .filters button{
+    background:none; border:1px solid color-mix(in srgb, currentColor 24%, transparent);
+    padding:.7em 1.5em; font-size:.66rem; letter-spacing:.22em; text-transform:uppercase;
+    cursor:pointer; border-radius:2px; transition:background-color .45s var(--ease), color .45s var(--ease), border-color .45s var(--ease);
+  }
+  .filters button:hover{ border-color:var(--brass-500); }
+  .filters button.is-active{ background:var(--forest-800); color:var(--ivory-100); border-color:var(--forest-800); }
+</style>
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<header class="header">
+  <div class="header__inner">
+    <a class="brand" href="index.html" aria-label="Maison Rorota, accueil">
+      <span class="brand__name">Maison Rorota</span>
+      <span class="brand__sub">Rémire-Montjoly · Guyane</span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="chambres.html">Chambres &amp; Suites</a>
+      <a href="restaurant.html">La Table</a>
+      <a href="bien-etre.html">Bien-être</a>
+      <a href="decouverte.html" aria-current="page">Découverte</a>
+      <a href="sejour.html">Votre séjour</a>
+      <a href="galerie.html">Galerie</a>
+    </nav>
+    <div class="header__cta"><a class="btn" href="reservation.html">Réserver</a></div>
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-mobile">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="menu-mobile">
+  <ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="chambres.html">Chambres &amp; Suites</a></li>
+    <li><a href="restaurant.html">La Table</a></li>
+    <li><a href="bien-etre.html">Bien-être</a></li>
+    <li><a href="decouverte.html">Découverte</a></li>
+    <li><a href="sejour.html">Votre séjour</a></li>
+    <li><a href="galerie.html">Galerie</a></li>
+    <li><a href="reservation.html">Réserver</a></li>
+  </ul>
+  <div class="mobile-nav__foot">
+    <span>Anse de Montjoly, 97354 Rémire-Montjoly</span>
+    <span>+594 594 00 00 00</span>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- =================================================================== HERO -->
+<section class="hero hero--page">
+  <div class="hero__media">
+    <img src="assets/img/hero-decouverte.jpg" alt="La canopée guyanaise noyée dans la brume au lever du jour" fetchpriority="high">
+  </div>
+  <div class="hero__inner">
+    <p class="crumb"><a href="index.html">Accueil</a> &nbsp;/&nbsp; Découverte</p>
+    <h1 class="h1">
+      <span class="line-mask"><span>Un continent</span></span>
+      <span class="line-mask"><span class="serif-italic">de forêt</span></span>
+    </h1>
+    <p class="hero__sub">
+      96 % du territoire est couvert d'Amazonie. Voici comment y entrer,
+      accompagné de gens qui la connaissent.
+    </p>
+  </div>
+</section>
+
+<!-- ================================================================ INTRO -->
+<section class="section section--tight">
+  <div class="wrap wrap--narrow center" data-reveal>
+    <p class="eyebrow is-centered">La conciergerie</p>
+    <h2 class="h2">Nous ne revendons pas des excursions</h2>
+    <p class="lead">
+      Nous travaillons avec sept guides indépendants, tous diplômés, tous guyanais,
+      que nous connaissons personnellement. Ils prennent quatre personnes,
+      rarement plus. Dites-nous ce que vous voulez voir — la suite nous regarde.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ EXCURSIONS -->
+<section class="section section--flush-top" id="excursions">
+  <div class="wrap">
+
+    <div class="filters" data-filters data-reveal>
+      <button type="button" data-filter="all" class="is-active">Tout</button>
+      <button type="button" data-filter="nature">Nature</button>
+      <button type="button" data-filter="culture">Culture</button>
+      <button type="button" data-filter="aventure">Aventure</button>
+      <button type="button" data-filter="famille">En famille</button>
+      <button type="button" data-filter="libre">Sans guide</button>
+    </div>
+
+    <div class="exc-grid" data-stagger=".07">
+
+      <a class="exc ph ratio-3-4" id="salut" href="contact.html?exc=salut" data-cat="culture nature famille" data-reveal-img>
+        <img src="assets/img/exc-salut.jpg" alt="Les Îles du Salut vues depuis la côte, entre les cocotiers" loading="lazy">
+        <span class="exc__veil"></span>
+        <span class="exc__body">
+          <span class="exc__kicker">Journée · en mer · famille</span>
+          <span class="exc__title">Les Îles du Salut</span>
+          <span class="exc__meta">195 € · départ 6 h 30, retour 18 h</span>
+          <span class="exc__more">L'île Royale, l'île Saint-Joseph et le bagne rendu à la végétation. Catamaran depuis Kourou, déjeuner sur l'île, baignade dans l'anse. Les singes capucins vous attendent au débarcadère.</span>
+        </span>
+      </a>
+
+      <a class="exc ph ratio-3-4" id="kaw" href="contact.html?exc=kaw" data-cat="nature aventure" data-reveal-img>
+        <img src="assets/img/exc-kaw.jpg" alt="Lever de soleil sur les marais de Kaw" loading="lazy">
+        <span class="exc__veil"></span>
+        <span class="exc__body">
+          <span class="exc__kicker">2 jours · nuit en carbet</span>
+          <span class="exc__title">Les marais de Kaw</span>
+          <span class="exc__meta">290 € · départ 14 h, retour le lendemain 13 h</span>
+          <span class="exc__more">Sortie nocturne en pirogue à la recherche des caïmans noirs, nuit en hamac sur l'eau, réveil dans la brume au milieu des ibis rouges. La plus belle chose que la Guyane sache faire.</span>
+        </span>
+      </a>
+
+      <a class="exc ph ratio-3-4" id="tortues" href="contact.html?exc=tortues" data-cat="nature famille" data-reveal-img>
+        <img src="assets/img/exc-tortues.jpg" alt="Tortue luth sur le sable pendant la ponte" loading="lazy">
+        <span class="exc__veil"></span>
+        <span class="exc__body">
+          <span class="exc__kicker">Avril à juillet · nuit · famille</span>
+          <span class="exc__title">La ponte des tortues luth</span>
+          <span class="exc__meta">65 € · départ 21 h depuis l'hôtel</span>
+          <span class="exc__more">Sur la plage de Montjoly, à 300 mètres de la maison. Avec un guide naturaliste agréé, sans lumière blanche ni flash, à dix mètres de distance. Une tortue luth pèse 500 kilos.</span>
+        </span>
+      </a>
+
+      <a class="exc ph ratio-3-4" id="spatial" href="contact.html?exc=spatial" data-cat="culture famille" data-reveal-img>
+        <img src="assets/img/exc-spatial.jpg" alt="Traînée d'un lancement dans le ciel au-dessus de la plage" loading="lazy">
+        <span class="exc__veil"></span>
+        <span class="exc__body">
+          <span class="exc__kicker">Demi-journée · culture</span>
+          <span class="exc__title">Le Centre Spatial Guyanais</span>
+          <span class="exc__meta">120 € · sur inscription, pièce d'identité obligatoire</span>
+          <span class="exc__more">Visite guidée des pas de tir d'Ariane et du musée de l'Espace, à Kourou. Les jours de lancement, nous organisons l'accès au site d'observation — à réserver plusieurs semaines à l'avance.</span>
+        </span>
+      </a>
+
+      <a class="exc ph ratio-3-4" id="pirogue" href="contact.html?exc=pirogue" data-cat="nature aventure" data-reveal-img>
+        <img src="assets/img/exc-pirogue.jpg" alt="Rivière bordée de forêt primaire au petit matin" loading="lazy">
+        <span class="exc__veil"></span>
+        <span class="exc__body">
+          <span class="exc__kicker">Journée · pirogue</span>
+          <span class="exc__title">Remontée de crique en pirogue</span>
+          <span class="exc__meta">240 € · départ 7 h, retour 18 h</span>
+          <span class="exc__more">Sur l'Approuague ou la Comté selon le niveau d'eau. Piroguier bushinengué, baignade en eau noire, déjeuner grillé sur un banc de sable. Silence complet à partir du deuxième méandre.</span>
+        </span>
+      </a>
+
+      <a class="exc ph ratio-3-4" id="tresor" href="contact.html?exc=tresor" data-cat="nature famille" data-reveal-img>
+        <img src="assets/img/exc-tresor.jpg" alt="Sous-bois de forêt primaire guyanaise" loading="lazy">
+        <span class="exc__veil"></span>
+        <span class="exc__body">
+          <span class="exc__kicker">Demi-journée · sentier aménagé</span>
+          <span class="exc__title">La réserve de la Trésor</span>
+          <span class="exc__meta">110 € · départ 7 h, retour 13 h</span>
+          <span class="exc__more">Un sentier botanique de 1,7 km sur la montagne de Kaw, accessible à tous. Orchidées, arbres à contreforts, singes hurleurs à portée d'oreille. Le meilleur premier contact avec la forêt.</span>
+        </span>
+      </a>
+
+      <a class="exc ph ratio-3-4" id="cayenne" href="contact.html?exc=cayenne" data-cat="culture famille" data-reveal-img>
+        <img src="assets/img/exc-cayenne.jpg" alt="Bâtiment colonial du centre historique de Cayenne" loading="lazy">
+        <span class="exc__veil"></span>
+        <span class="exc__body">
+          <span class="exc__kicker">Matinée · le samedi</span>
+          <span class="exc__title">Cayenne et son marché</span>
+          <span class="exc__meta">85 € · départ 7 h, retour 12 h</span>
+          <span class="exc__more">Le marché du samedi matin — bouillon d'awara, soupe chinoise, piments, paniers en arouman — puis la place des Palmistes et les maisons créoles du vieux Cayenne.</span>
+        </span>
+      </a>
+
+      <a class="exc ph ratio-3-4" id="cacao" href="contact.html?exc=cacao" data-cat="culture famille" data-reveal-img>
+        <img src="assets/img/exc-cacao.jpg" alt="Collines forestières de l'intérieur guyanais" loading="lazy">
+        <span class="exc__veil"></span>
+        <span class="exc__body">
+          <span class="exc__kicker">Matinée · le dimanche</span>
+          <span class="exc__title">Le village de Cacao</span>
+          <span class="exc__meta">130 € · départ 6 h 30, retour 14 h</span>
+          <span class="exc__more">Village hmong installé en 1977, à 75 km dans les terres. Marché dominical, soupe de nouilles au petit-déjeuner, broderies et maraîchage. Passage par le saut Bief au retour.</span>
+        </span>
+      </a>
+
+      <a class="exc ph ratio-3-4" id="kayak" href="contact.html?exc=kayak" data-cat="nature aventure famille" data-reveal-img>
+        <img src="assets/img/exc-kayak.jpg" alt="Mangrove et rivière au lever du jour" loading="lazy">
+        <span class="exc__veil"></span>
+        <span class="exc__body">
+          <span class="exc__kicker">2 h 30 · au lever du jour</span>
+          <span class="exc__title">Kayak dans la mangrove</span>
+          <span class="exc__meta">95 € · départ 5 h 45 depuis l'hôtel</span>
+          <span class="exc__more">Sur la crique Fouillée, à quinze minutes. Départ avant le soleil, retour pour le petit-déjeuner. Ibis rouges, hérons, aigrettes — et le vol des perroquets au-dessus de la tête.</span>
+        </span>
+      </a>
+
+      <a class="exc ph ratio-3-4" id="carbet" href="contact.html?exc=carbet" data-cat="aventure nature" data-reveal-img>
+        <img src="assets/img/exc-carbet.jpg" alt="Carbets de bois sous la forêt" loading="lazy">
+        <span class="exc__veil"></span>
+        <span class="exc__body">
+          <span class="exc__kicker">3 jours · immersion</span>
+          <span class="exc__title">Trois jours en forêt profonde</span>
+          <span class="exc__meta">890 € · maximum 4 personnes</span>
+          <span class="exc__more">Pirogue, marche, hamac et moustiquaire. Un guide, un piroguier, un cuisinier. Pas de réseau, pas d'électricité, de l'eau de crique filtrée. Bonne condition physique requise.</span>
+        </span>
+      </a>
+
+      <a class="exc ph ratio-3-4" id="rorota" href="sejour.html#valise" data-cat="libre nature famille" data-reveal-img>
+        <img src="assets/img/exc-rorota.jpg" alt="Forêt du Rorota dans la brume" loading="lazy">
+        <span class="exc__veil"></span>
+        <span class="exc__body">
+          <span class="exc__kicker">2 h 30 · sans guide · gratuit</span>
+          <span class="exc__title">Le sentier du Rorota</span>
+          <span class="exc__meta">Départ à 10 min à pied de l'hôtel</span>
+          <span class="exc__more">Une boucle de 6 km autour du lac, en forêt, balisée et sans difficulté. Singes saïmiris au petit matin, point de vue sur l'océan à mi-parcours. Nous prêtons les bâtons et les jumelles.</span>
+        </span>
+      </a>
+
+      <a class="exc ph ratio-3-4" id="plage" href="sejour.html#reglement" data-cat="libre famille" data-reveal-img>
+        <img src="assets/img/exc-plage.jpg" alt="La plage de Montjoly et son promontoire boisé" loading="lazy">
+        <span class="exc__veil"></span>
+        <span class="exc__body">
+          <span class="exc__kicker">À 300 m · sans guide · gratuit</span>
+          <span class="exc__title">La plage de Montjoly</span>
+          <span class="exc__meta">Accès direct par le jardin</span>
+          <span class="exc__more">Trois kilomètres de sable, presque toujours déserts en semaine. L'eau est chaude et couleur café — c'est l'Amazone qui charrie ses limons jusqu'ici. Baignade à vos risques, non surveillée.</span>
+        </span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================= FAUNE -->
+<section class="section on-dark">
+  <div class="wrap">
+    <div class="center" data-reveal style="margin-bottom: clamp(2.5rem,5vw,4rem)">
+      <p class="eyebrow is-centered">Ce que vous verrez</p>
+      <h2 class="h2">Il n'y a pas de grands fauves,<br><span class="serif-italic">il y a mieux</span></h2>
+      <p class="lead" style="max-width:54ch">
+        La Guyane compte 700 espèces d'oiseaux, 190 de mammifères et un nombre
+        d'insectes que personne n'a fini de compter.
+      </p>
+    </div>
+
+    <div class="grid grid-4" data-stagger=".09">
+      <figure data-reveal style="margin:0">
+        <div class="ph ratio-4-3 ph--zoom" data-reveal-img><img src="assets/img/nat-ibis.jpg" alt="Ibis rouge perché sur une branche de palétuvier" loading="lazy"></div>
+        <figcaption style="margin-top:1rem">
+          <h3 class="h4" style="margin-bottom:.2rem">L'ibis rouge</h3>
+          <p style="font-size:.87rem; opacity:.75; margin:0">Par centaines dans les marais de Kaw, au coucher du soleil.</p>
+        </figcaption>
+      </figure>
+      <figure data-reveal style="margin:0">
+        <div class="ph ratio-4-3 ph--zoom" data-reveal-img><img src="assets/img/nat-ara.jpg" alt="Ara macao dans les palmes" loading="lazy"></div>
+        <figcaption style="margin-top:1rem">
+          <h3 class="h4" style="margin-bottom:.2rem">Les aras</h3>
+          <p style="font-size:.87rem; opacity:.75; margin:0">Ils traversent en couple, toujours bruyamment, vers 17 h.</p>
+        </figcaption>
+      </figure>
+      <figure data-reveal style="margin:0">
+        <div class="ph ratio-4-3 ph--zoom" data-reveal-img><img src="assets/img/nat-caiman.jpg" alt="Œil de caïman à la surface de l'eau, la nuit" loading="lazy"></div>
+        <figcaption style="margin-top:1rem">
+          <h3 class="h4" style="margin-bottom:.2rem">Le caïman noir</h3>
+          <p style="font-size:.87rem; opacity:.75; margin:0">Jusqu'à cinq mètres. On le repère à l'œil, au faisceau de la lampe.</p>
+        </figcaption>
+      </figure>
+      <figure data-reveal style="margin:0">
+        <div class="ph ratio-4-3 ph--zoom" data-reveal-img><img src="assets/img/nat-paresseux.jpg" alt="Paresseux à trois doigts suspendu à une branche" loading="lazy"></div>
+        <figcaption style="margin-top:1rem">
+          <h3 class="h4" style="margin-bottom:.2rem">Le paresseux</h3>
+          <p style="font-size:.87rem; opacity:.75; margin:0">Il y en a deux dans le jardin. Demandez, on vous les montrera.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================================== SAISONS -->
+<section class="section" id="saisons">
+  <div class="wrap">
+    <div class="center" data-reveal style="margin-bottom: clamp(2.5rem,5vw,3.5rem)">
+      <p class="eyebrow is-centered">Quand venir</p>
+      <h2 class="h2">Quatre saisons, aucune mauvaise</h2>
+      <p class="lead" style="max-width:56ch">
+        Il fait entre 26 et 32 °C toute l'année, avec 80 % d'humidité.
+        Ce qui change, c'est la pluie — et ce qu'elle rend possible.
+      </p>
+    </div>
+
+    <div class="season-bar" data-reveal>
+      <div class="season">
+        <h4 class="h4">Petite saison des pluies</h4>
+        <p class="season__when">Décembre – février</p>
+        <p>Averses courtes et violentes, souvent l'après-midi. Végétation éclatante, criques en eau. Haute saison touristique : réservez tôt.</p>
+      </div>
+      <div class="season">
+        <h4 class="h4">Petit été de mars</h4>
+        <p class="season__when">Mars</p>
+        <p>Une éclaircie d'un mois entre deux saisons humides. Peu de monde, tarifs doux, forêt encore verte. Notre période préférée.</p>
+      </div>
+      <div class="season">
+        <h4 class="h4">Grande saison des pluies</h4>
+        <p class="season__when">Avril – juin</p>
+        <p>Il pleut beaucoup, parfois des heures. Les tortues luth pondent. Les pistes forestières deviennent difficiles. Tarifs les plus bas.</p>
+      </div>
+      <div class="season">
+        <h4 class="h4">Saison sèche</h4>
+        <p class="season__when">Juillet – novembre</p>
+        <p>Ciel dégagé, forêt praticable, mer calme. Toutes les excursions sont possibles. C'est la période la plus demandée.</p>
+      </div>
+    </div>
+
+    <div class="note" data-reveal style="margin-top:2.5rem; max-width:66ch">
+      <strong>À noter.</strong> La ponte des tortues luth sur la plage de Montjoly a lieu
+      d'<strong>avril à juillet</strong>, avec un pic en mai et juin. L'éclosion des nouveau-nés
+      s'observe de <strong>juillet à septembre</strong>. Ces dates ne se commandent pas :
+      nous ne garantissons jamais une observation.
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ APPEL FINAL -->
+<section class="cta-band">
+  <div class="cta-band__media">
+    <img src="assets/img/cta-decouverte.jpg" alt="Canopée amazonienne dans la brume au lever du jour" loading="lazy">
+  </div>
+  <div class="cta-band__inner wrap wrap--narrow">
+    <p class="eyebrow is-centered" data-reveal>Conciergerie</p>
+    <h2 class="h1" data-reveal>Dites-nous combien<br><span class="serif-italic">de jours vous avez</span></h2>
+    <p class="lead" data-reveal style="margin: 0 auto 2.5rem; max-width: 48ch; color: rgba(251,248,242,.82)">
+      Nous construisons le programme avec vous avant l'arrivée, et nous le refaisons
+      sur place s'il pleut. C'est compris dans le séjour.
+    </p>
+    <p data-reveal><a class="btn btn--brass" href="contact.html">Préparer un programme</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="brand__name">Maison Rorota</span>
+        <p>
+          Hôtel &amp; Table, 20 chambres et suites.<br>
+          Anse de Montjoly, 97354 Rémire-Montjoly<br>
+          Guyane française
+        </p>
+        <p style="margin-top:1.2rem">
+          <a href="tel:+594594000000">+594 594 00 00 00</a><br>
+          <a href="mailto:reservation@maison-rorota.gf">reservation@maison-rorota.gf</a>
+        </p>
+      </div>
+      <div>
+        <h4>La maison</h4>
+        <ul>
+          <li><a href="chambres.html">Chambres &amp; suites</a></li>
+          <li><a href="restaurant.html">La Table de Rorota</a></li>
+          <li><a href="bien-etre.html">Spa Wassaï</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Préparer</h4>
+        <ul>
+          <li><a href="decouverte.html">Excursions</a></li>
+          <li><a href="sejour.html#valise">Que mettre dans sa valise</a></li>
+          <li><a href="sejour.html#sante">Santé &amp; vaccins</a></li>
+          <li><a href="sejour.html#reglement">Règlement intérieur</a></li>
+          <li><a href="sejour.html#faq">Questions fréquentes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Informations</h4>
+        <ul>
+          <li><a href="reservation.html">Réserver</a></li>
+          <li><a href="contact.html#acces">Accès &amp; transferts</a></li>
+          <li><a href="sejour.html#annulation">Conditions d'annulation</a></li>
+          <li><a href="mentions.html">Mentions légales</a></li>
+          <li><a href="mentions.html#credits">Crédits photo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> Maison Rorota — Site de démonstration</span>
+      <span>Arrivée 15 h · Départ 12 h · Non-fumeur</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js?v=7"></script>
+</body>
+</html>
