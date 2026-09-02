@@ -35,96 +35,95 @@
 
   /* ------------------------------------------------ 1 bis. vidéo du hero
      L'affiche s'affiche tout de suite ; la vidéo se pose par-dessus dès
-     qu'elle peut jouer.
+     qu'elle joue pour de bon.
 
-     Cette vidéo ne partait pas à la première visite. Le déclenchement était
-     conditionné à navigator.connection.effectiveType — qui n'est pas une
-     mesure mais une estimation faite par Chrome à partir des échanges
-     récents. À la première visite il n'y en a pas, et l'API répond « 3g » :
-     elle le fait même contre un serveur local, en annonçant 650 ms de temps
-     d'aller-retour. Le test déclarait donc la connexion lente et la vidéo
-     n'obtenait jamais de source — networkState restait à zéro, rien n'était
-     même demandé. Au rechargement, Chrome ayant observé des réponses rapides,
-     l'estimation passait à « 4g » et tout fonctionnait : d'où un défaut
-     invisible en développement et présent chez chaque visiteur.
+     Deux défauts ont été corrigés ici, dans cet ordre.
 
-     Restent deux gardes, parce que ce sont des choix explicites de la
-     personne et non des devinettes du navigateur : le mouvement réduit et
-     l'économiseur de données. Pour le reste on essaie, et l'on renonce sur
-     une mesure — si rien n'est jouable au bout du délai, on relâche le
-     fichier au lieu de continuer à le tirer. */
+     Le premier : le déclenchement était conditionné à
+     navigator.connection.effectiveType, qui n'est pas une mesure mais une
+     estimation faite par Chrome à partir des échanges récents. À la première
+     visite il n'y en a pas et l'API répond « 3g » — elle le fait même contre
+     un serveur local, en annonçant 650 ms d'aller-retour. La connexion était
+     donc déclarée lente et la vidéo n'obtenait jamais de source. Au
+     rechargement l'estimation passait à « 4g » et tout fonctionnait : un
+     défaut invisible en développement, présent chez chaque visiteur.
+
+     Le second, plus tenace : même la garde levée, la source était posée PAR
+     LE SCRIPT — heroVideo.src = … — une fois le document chargé. WebKit
+     traite ce cas différemment d'un élément déclaré dans la page : il accorde
+     volontiers la lecture automatique au second et la refuse au premier. Sur
+     Mac tout allait ; sur téléphone il fallait toucher l'écran. Les <source>
+     sont désormais dans le HTML, avec leur attribut « media » — c'est le
+     navigateur qui choisit la définition et qui démarre. Le script ne fait
+     plus que deux choses : révéler la vidéo quand elle joue vraiment, et
+     relancer si le premier essai a été refusé.
+
+     Le mouvement réduit est passé dans « media » lui aussi. Reste ici
+     l'économiseur de données, qu'aucune requête média n'exprime de façon
+     portable : c'est un choix explicite de la personne, on le respecte en
+     relâchant les sources. */
   var heroVideo = $(".hero__video");
   if (heroVideo) {
-    var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-    if (!reduced && !(conn && conn.saveData)) {
-      var ATTENTE_MAX = 10000;          // au-delà, on rend la bande passante
-      var lance = false, abandonne = false, minuteur = null;
+    var ATTENTE_MAX = 10000;          // au-delà, on rend la bande passante
+    var abandonne = false, minuteur = null;
 
+    var relacher = function () {
+      while (heroVideo.firstChild) heroVideo.removeChild(heroVideo.firstChild);
+      heroVideo.load();               // coupe le téléchargement en cours
+    };
+
+    /* On ne révèle la vidéo que lorsqu'elle joue POUR DE BON.
+
+       La classe is-on fait deux choses : elle affiche la vidéo, et elle
+       arrête le Ken Burns de l'affiche. Attachée à « canplay » — « assez de
+       données pour démarrer », et non « démarré » — elle remplaçait, sur un
+       téléphone qui refuse la lecture, une affiche qui dérive par une image
+       figée : l'accueil devenait complètement immobile. Sur « playing », le
+       fondu ne se déclenche que si le mouvement est là ; sinon l'affiche
+       continue de dériver et personne ne voit de différence.
+
+       Ce guet est posé AVANT tout le reste. Les sources étant maintenant
+       déclarées, la lecture peut avoir commencé pendant l'analyse du
+       document, donc avant l'exécution de ce script : l'événement serait
+       passé sans personne pour l'entendre, et la vidéo resterait invisible
+       en jouant derrière l'affiche. D'où aussi le rattrapage immédiat. */
+    var montrer = function () {
+      clearTimeout(minuteur);
+      if (abandonne) return;
+      heroVideo.classList.add("is-on");
+    };
+    heroVideo.addEventListener("playing", montrer, { once: true });
+    if (!heroVideo.paused && heroVideo.readyState >= 3) montrer();
+
+    var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    if (conn && conn.saveData) {
+      relacher();
+    } else {
       var jouer = function () {
         var p = heroVideo.play();
         if (p && p.catch) p.catch(function () {
-          /* Refusée. Sur téléphone c'est le cas ordinaire, pas l'exception :
-             économie d'énergie, mode données réduites, onglet ouvert en
-             arrière-plan. On ne montre alors rien, et l'on retentera. */
+          /* Refusée. Sur téléphone c'est un cas ordinaire, pas l'exception :
+             économie d'énergie, onglet ouvert en arrière-plan. On ne montre
+             rien, et l'on retentera. */
         });
       };
 
-      var demarre = function () {
-        if (lance) return;
-        lance = true;
-        var large = window.innerWidth >= 900 && window.devicePixelRatio >= 1;
-        var src = heroVideo.getAttribute(large ? "data-src-lg" : "data-src-sm");
-        if (!src) return;
-        /* On ne révèle la vidéo que lorsqu'elle joue POUR DE BON.
+      /* Plusieurs occasions de partir plutôt qu'une seule : un refus au
+         premier appel n'est pas définitif, l'élément devient éligible à
+         mesure que les données arrivent. */
+      ["loadedmetadata", "loadeddata", "canplay"].forEach(function (evt) {
+        heroVideo.addEventListener(evt, jouer);
+      });
+      jouer();
 
-           Elle l'était jusqu'ici sur « canplay », qui signifie « assez de
-           données pour démarrer » et non « démarré ». Or la classe is-on fait
-           deux choses : elle affiche la vidéo, et elle arrête le Ken Burns de
-           l'affiche. Sur un téléphone qui refuse la lecture automatique —
-           économie d'énergie, mode données réduites — le site remplaçait donc
-           une affiche qui dérive par une image de vidéo figée : l'écran
-           d'accueil devenait complètement immobile, et il fallait toucher
-           l'écran pour le réveiller. Attaché à « playing », le fondu ne se
-           déclenche que si le mouvement est réellement là ; sinon l'affiche
-           continue de dériver et personne ne voit de différence. */
-        heroVideo.addEventListener("playing", function () {
-          clearTimeout(minuteur);
-          if (abandonne) return;
-          heroVideo.classList.add("is-on");
-        }, { once: true });
-
-        /* Plusieurs occasions de partir plutôt qu'une seule : un refus au
-           premier appel n'est pas définitif, l'élément devient éligible à
-           mesure que les données arrivent. */
-        ["loadedmetadata", "loadeddata", "canplay"].forEach(function (evt) {
-          heroVideo.addEventListener(evt, jouer);
-        });
-
-        heroVideo.preload = "auto";
-        heroVideo.src = src;
-        jouer();
-        minuteur = setTimeout(function () {
-          if (heroVideo.readyState >= 3) return;   // arrivée entre-temps
-          abandonne = true;
-          heroVideo.removeAttribute("src");
-          heroVideo.load();                        // coupe le téléchargement
-        }, ATTENTE_MAX);
-      };
-
-      /* On part dès que l'affiche est là. Elle porte fetchpriority="high" et
-         gagne la course de toute façon : attendre « load » puis une demi-
-         seconde de plus, comme auparavant, ne protégeait rien et retardait la
-         vidéo de plusieurs secondes sur une page chargée d'images. */
-      var affiche = $(".hero__media img");
-      if (!affiche || affiche.complete) demarre();
-      else {
-        affiche.addEventListener("load", demarre, { once: true });
-        affiche.addEventListener("error", demarre, { once: true });
-        setTimeout(demarre, 2000);                 // filet
-      }
+      minuteur = setTimeout(function () {
+        if (heroVideo.readyState >= 3) return;   // arrivée entre-temps
+        abandonne = true;
+        relacher();
+      }, ATTENTE_MAX);
 
       var rattrape = function () {
-        if (!abandonne && heroVideo.paused && heroVideo.getAttribute("src")) jouer();
+        if (!abandonne && heroVideo.paused && heroVideo.querySelector("source")) jouer();
       };
       document.addEventListener("visibilitychange", function () {
         if (!document.hidden) rattrape();

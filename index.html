@@ -87,10 +87,28 @@
          · hero-photos-*  travelling sur les photos de la maison
          Pour revenir au second, remplacer « guyane » par « photos » ci-dessous
          et remettre l'affiche assets/img/hero-home.jpg sur l'image au-dessus. -->
-    <video class="hero__video" autoplay muted loop playsinline preload="none" aria-hidden="true"
-           poster="assets/img/hero-guyane.jpg"
-           data-src-lg="assets/video/hero-guyane-1440.mp4"
-           data-src-sm="assets/video/hero-guyane-960.mp4"></video>
+    <!-- Les sources sont DÉCLARÉES ici, et non posées par le script.
+
+         Elles ne l'étaient pas : le fichier vivait dans « data-src-* » et
+         js/main.js l'assignait au chargement. Un WebKit distingue les deux
+         cas — il accorde la lecture automatique à un élément déclaré dans la
+         page, et la refuse volontiers à une lecture lancée par script une
+         fois le document chargé. D'où un écran d'accueil qui ne partait
+         qu'après un contact du doigt, sur téléphone seulement.
+
+         Le choix de la définition passe par « media », comme le choix d'une
+         image dans un <picture> : sous 900 px de large, le montage 960 —
+         1,4 Mo au lieu de 3,4. Et « prefers-reduced-motion » y figure aussi :
+         qui a demandé moins de mouvement ne voit aucune source correspondre,
+         donc rien ne se télécharge. Cette préférence est ainsi respectée par
+         le navigateur lui-même, sans dépendre du script. -->
+    <video class="hero__video" autoplay muted loop playsinline preload="metadata" aria-hidden="true"
+           poster="assets/img/hero-guyane.jpg">
+      <source src="assets/video/hero-guyane-1440.mp4" type="video/mp4"
+              media="(min-width: 900px) and (prefers-reduced-motion: no-preference)">
+      <source src="assets/video/hero-guyane-960.mp4" type="video/mp4"
+              media="(prefers-reduced-motion: no-preference)">
+    </video>
   </div>
 
   <div class="hero__inner">
@@ -507,6 +525,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=10"></script>
+<script src="js/main.js?v=11"></script>
 </body>
 </html>
