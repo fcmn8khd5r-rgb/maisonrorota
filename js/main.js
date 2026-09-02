@@ -146,12 +146,12 @@
          play() refusé rend une promesse rejetée, que l'on ignore. */
       var essais = 0;
       var relance = setInterval(function () {
-        if (abandonne || !heroVideo.paused || ++essais > 12) {
+        if (abandonne || !heroVideo.paused || ++essais > 40) {
           clearInterval(relance);
           return;
         }
         jouer();
-      }, 500);
+      }, 250);
 
       minuteur = setTimeout(function () {
         if (heroVideo.readyState >= 3) return;   // arrivée entre-temps
