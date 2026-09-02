@@ -63,9 +63,9 @@
       var jouer = function () {
         var p = heroVideo.play();
         if (p && p.catch) p.catch(function () {
-          /* Refusée. Le cas courant : la page a été ouverte dans un onglet
-             d'arrière-plan depuis un autre site. On retentera au retour au
-             premier plan, ou au premier geste. */
+          /* Refusée. Sur téléphone c'est le cas ordinaire, pas l'exception :
+             économie d'énergie, mode données réduites, onglet ouvert en
+             arrière-plan. On ne montre alors rien, et l'on retentera. */
         });
       };
 
@@ -75,14 +75,33 @@
         var large = window.innerWidth >= 900 && window.devicePixelRatio >= 1;
         var src = heroVideo.getAttribute(large ? "data-src-lg" : "data-src-sm");
         if (!src) return;
-        heroVideo.addEventListener("canplay", function () {
+        /* On ne révèle la vidéo que lorsqu'elle joue POUR DE BON.
+
+           Elle l'était jusqu'ici sur « canplay », qui signifie « assez de
+           données pour démarrer » et non « démarré ». Or la classe is-on fait
+           deux choses : elle affiche la vidéo, et elle arrête le Ken Burns de
+           l'affiche. Sur un téléphone qui refuse la lecture automatique —
+           économie d'énergie, mode données réduites — le site remplaçait donc
+           une affiche qui dérive par une image de vidéo figée : l'écran
+           d'accueil devenait complètement immobile, et il fallait toucher
+           l'écran pour le réveiller. Attaché à « playing », le fondu ne se
+           déclenche que si le mouvement est réellement là ; sinon l'affiche
+           continue de dériver et personne ne voit de différence. */
+        heroVideo.addEventListener("playing", function () {
           clearTimeout(minuteur);
           if (abandonne) return;
           heroVideo.classList.add("is-on");
-          jouer();
         }, { once: true });
+
+        /* Plusieurs occasions de partir plutôt qu'une seule : un refus au
+           premier appel n'est pas définitif, l'élément devient éligible à
+           mesure que les données arrivent. */
+        ["loadedmetadata", "loadeddata", "canplay"].forEach(function (evt) {
+          heroVideo.addEventListener(evt, jouer);
+        });
+
+        heroVideo.preload = "auto";
         heroVideo.src = src;
-        heroVideo.load();
         jouer();
         minuteur = setTimeout(function () {
           if (heroVideo.readyState >= 3) return;   // arrivée entre-temps
