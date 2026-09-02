@@ -6,10 +6,15 @@
 <title>Réserver &amp; nous joindre — Maison Rorota, Guyane</title>
 <meta name="description" content="Réservez votre séjour à la Maison Rorota, Rémire-Montjoly, Guyane française. Demande de disponibilité, accès depuis l'aéroport de Cayenne, transferts et contacts.">
 <meta name="theme-color" content="#0A1410">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=8">
+<!-- Polices servies depuis ce serveur. Elles venaient de Google : la
+     feuille distante bloquait le rendu le temps d'un aller-retour vers un
+     tiers, et chaque visiteur y exposait son adresse IP. -->
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="assets/fonts/cormorant-garamond-400-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="assets/fonts/jost-300-latin.woff2">
+<link rel="stylesheet" href="css/polices.css?v=1">
+<link rel="stylesheet" href="css/style.css?v=20">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A1410'/><text y='23' x='16' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%23C9A96A'>R</text></svg>">
 </head>
 <body>
@@ -60,7 +65,7 @@
 <!-- =================================================================== HERO -->
 <section class="hero hero--page">
   <div class="hero__media">
-    <img src="assets/img/hero-contact.jpg" alt="L'entrée de la Maison Rorota illuminée à la nuit tombante" fetchpriority="high">
+    <picture><source type="image/avif" srcset="assets/img/hero-contact-480.avif 480w, assets/img/hero-contact-800.avif 800w, assets/img/hero-contact-1280.avif 1280w, assets/img/hero-contact-1920.avif 1920w, assets/img/hero-contact-2000.avif 2000w" sizes="100vw"><source type="image/webp" srcset="assets/img/hero-contact-480.webp 480w, assets/img/hero-contact-800.webp 800w, assets/img/hero-contact-1280.webp 1280w, assets/img/hero-contact-1920.webp 1920w, assets/img/hero-contact-2000.webp 2000w" sizes="100vw"><img src="assets/img/hero-contact.jpg" alt="L'entrée de la Maison Rorota illuminée à la nuit tombante" fetchpriority="high" width="2000" height="1125" decoding="async" style="background:url(data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAABwAgCdASoQAAkAAwBSJQBOj+Ef/iiAFLpoUp6oAP7Q/fioWALrfe6pW8pMXPbPco7evPF0s8ZWTyXQ+Tzm6Z57j79vApqsqvhg8l/zQa/ZIfzdtWxb8qZZJJ9QMuMzIGZsAAAA) center/cover"></picture>
   </div>
   <div class="hero__inner">
     <p class="crumb"><a href="index.html">Accueil</a> &nbsp;/&nbsp; Réserver</p>
@@ -318,7 +323,7 @@
     <div class="split split--reverse">
       <div class="split__media">
         <div class="ph ratio-4-3" data-reveal-img>
-          <img src="assets/img/table-ronde.jpg" alt="Tables rondes dressées dans la salle du restaurant" loading="lazy">
+          <picture><source type="image/avif" srcset="assets/img/table-ronde-480.avif 480w, assets/img/table-ronde-800.avif 800w, assets/img/table-ronde-1280.avif 1280w, assets/img/table-ronde-1400.avif 1400w" sizes="(max-width:600px) 350px, (max-width:1024px) 707px, 629px"><source type="image/webp" srcset="assets/img/table-ronde-480.webp 480w, assets/img/table-ronde-800.webp 800w, assets/img/table-ronde-1280.webp 1280w, assets/img/table-ronde-1400.webp 1400w" sizes="(max-width:600px) 350px, (max-width:1024px) 707px, 629px"><img src="assets/img/table-ronde.jpg" alt="Tables rondes dressées dans la salle du restaurant" loading="lazy" width="1400" height="1050" decoding="async" style="background:url(data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAwAgCdASoQAAwAAwBSJQBdgCHhByTat9J1AAD+8AR1vCAPjKkTJDizvybV3B8eT874NFvxfH0ryW6Pruissobl4lO8PLANwG5YJjsfJ81QqXwvCVyRweoAAAA=) center/cover"></picture>
         </div>
       </div>
       <div class="split__body" data-reveal>

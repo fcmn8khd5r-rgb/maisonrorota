@@ -9,10 +9,15 @@
 <meta property="og:title" content="Maison Rorota — Hôtel &amp; Table, Guyane">
 <meta property="og:description" content="20 clés d'exception entre forêt amazonienne et océan Atlantique.">
 <meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=8">
+<!-- Polices servies depuis ce serveur. Elles venaient de Google : la
+     feuille distante bloquait le rendu le temps d'un aller-retour vers un
+     tiers, et chaque visiteur y exposait son adresse IP. -->
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="assets/fonts/cormorant-garamond-400-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="assets/fonts/jost-300-latin.woff2">
+<link rel="stylesheet" href="css/polices.css?v=1">
+<link rel="stylesheet" href="css/style.css?v=20">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A1410'/><text y='23' x='16' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%23C9A96A'>R</text></svg>">
 </head>
 <body>
@@ -75,7 +80,7 @@
     <!-- L'image reste la base : elle s'affiche immédiatement et sert d'affiche.
          La vidéo n'est téléchargée qu'ensuite, et seulement si le contexte s'y
          prête (voir « vidéo du hero » dans js/main.js). -->
-    <img src="assets/img/hero-guyane.jpg" alt="La forêt amazonienne et une crique au couchant, vues du ciel" fetchpriority="high">
+    <picture><source type="image/avif" srcset="assets/img/hero-guyane-480.avif 480w, assets/img/hero-guyane-800.avif 800w, assets/img/hero-guyane-1280.avif 1280w, assets/img/hero-guyane-1440.avif 1440w" sizes="100vw"><source type="image/webp" srcset="assets/img/hero-guyane-480.webp 480w, assets/img/hero-guyane-800.webp 800w, assets/img/hero-guyane-1280.webp 1280w, assets/img/hero-guyane-1440.webp 1440w" sizes="100vw"><img src="assets/img/hero-guyane.jpg" alt="La forêt amazonienne et une crique au couchant, vues du ciel" fetchpriority="high" width="1440" height="810" decoding="async" style="background:url(data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQAgCdASoQAAkAAwBSJYwCdAEPSUOKS8oAAP7VF/NUN+iv+zGtTBPhLZSYK4Gb18gh/ErhE1r3sb6O4B69r3Rvhr4jsAcAAAA=) center/cover"></picture>
 
     <!-- Deux montages sont livrés, au même étalonnage :
          · hero-guyane-*  images réelles filmées en Guyane (par défaut)
@@ -154,10 +159,10 @@
     <div class="split">
       <div class="split__media stack-media">
         <div class="ph ratio-3-4 stack-media__main" data-reveal-img>
-          <img src="assets/img/intro-a.jpg" alt="Galerie intérieure de la Maison Rorota, boiseries et lanternes" loading="lazy">
+          <picture><source type="image/avif" srcset="assets/img/intro-a-480.avif 480w, assets/img/intro-a-800.avif 800w, assets/img/intro-a-1100.avif 1100w" sizes="(max-width:600px) 350px, (max-width:1024px) 707px, 629px"><source type="image/webp" srcset="assets/img/intro-a-480.webp 480w, assets/img/intro-a-800.webp 800w, assets/img/intro-a-1100.webp 1100w" sizes="(max-width:600px) 350px, (max-width:1024px) 707px, 629px"><img src="assets/img/intro-a.jpg" alt="Galerie intérieure de la Maison Rorota, boiseries et lanternes" loading="lazy" width="1100" height="1466" decoding="async" style="background:url(data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAADQAwCdASoQABUAPt1cpkyopSOiMAgBEBuJZQAAWlOkcZ7PSL2D+rwA/cyUIRbpNWbYwP7EnD/T03m+cyL+Uc6hF39d6vnQ6xF0OEYf03DcVwFfJT4rSfiwQe22d2F7YsvUR1t+uCHtk7xAAAA=) center/cover"></picture>
         </div>
         <div class="ph ratio-1-1 stack-media__inset" data-reveal-img style="--d:.2s">
-          <img src="assets/img/intro-b.jpg" alt="Détail d'un salon : bois précieux, lin blanc et lumière tamisée" loading="lazy">
+          <picture><source type="image/avif" srcset="assets/img/intro-b-480.avif 480w, assets/img/intro-b-700.avif 700w" sizes="(max-width:600px) 350px, (max-width:1024px) 309px, 273px"><source type="image/webp" srcset="assets/img/intro-b-480.webp 480w, assets/img/intro-b-700.webp 700w" sizes="(max-width:600px) 350px, (max-width:1024px) 309px, 273px"><img src="assets/img/intro-b.jpg" alt="Détail d'un salon : bois précieux, lin blanc et lumière tamisée" loading="lazy" width="700" height="700" decoding="async" style="background:url(data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAQAgCdASoQABAAAwBSJZACdAD0P/H2FEwAAP7F0JHV/XNLbxAla6dOsAz7btPF3QlubiPcAKbhe+obhG2/qRk4n+zeLCfQWdAa4z9Rl2Dr1uDwEn2pu+3yS7QSBkbPLB0Vlf8AAAA=) center/cover"></picture>
         </div>
       </div>
 
@@ -230,7 +235,7 @@
       <article class="card" data-reveal>
         <div class="ph card__media ratio-4-5" data-reveal-img>
           <span class="card__tag">8 chambres</span>
-          <img src="assets/img/room-wapa.jpg" alt="Chambre Deluxe Wapa : lit à baldaquin, fauteuils en rotin et table basse en bois massif" loading="lazy">
+          <picture><source type="image/avif" srcset="assets/img/room-wapa-480.avif 480w, assets/img/room-wapa-800.avif 800w, assets/img/room-wapa-1200.avif 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 707px, 680px"><source type="image/webp" srcset="assets/img/room-wapa-480.webp 480w, assets/img/room-wapa-800.webp 800w, assets/img/room-wapa-1200.webp 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 707px, 680px"><img src="assets/img/room-wapa.jpg" alt="Chambre Deluxe Wapa : lit à baldaquin, fauteuils en rotin et table basse en bois massif" loading="lazy" width="1200" height="1500" decoding="async" style="background:url(data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABwBACdASoQABQAPt1apkyopSOiMAgBEBuJZACdMoR4GCx+8DdaDEr1Za4CAAD+xItwqZ3oQG9PYw1tIKkUtCBgc56WZ1NYRqfoZrarV7lF7xYKFIBU0GweBebCn4CgobQa8WkOYRZlL//+YbDQsO1xRvKZ+abFEELgSMOLscAAAA==) center/cover"></picture>
         </div>
         <h3 class="h3 card__title">Chambre Deluxe Wapa</h3>
         <p class="card__meta">42 m² · Vue jardin créole</p>
@@ -244,7 +249,7 @@
       <article class="card" data-reveal>
         <div class="ph card__media ratio-4-5" data-reveal-img>
           <span class="card__tag">4 suites</span>
-          <img src="assets/img/suite-awara.jpg" alt="Suite Junior Awara, lit à baldaquin drapé de mousseline blanche" loading="lazy">
+          <picture><source type="image/avif" srcset="assets/img/suite-awara-480.avif 480w, assets/img/suite-awara-800.avif 800w, assets/img/suite-awara-1200.avif 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 707px, 680px"><source type="image/webp" srcset="assets/img/suite-awara-480.webp 480w, assets/img/suite-awara-800.webp 800w, assets/img/suite-awara-1200.webp 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 707px, 680px"><img src="assets/img/suite-awara.jpg" alt="Suite Junior Awara, lit à baldaquin drapé de mousseline blanche" loading="lazy" width="1200" height="1500" decoding="async" style="background:url(data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAwBACdASoQABQAPt1apkyopSOiMAgBEBuJYgCdMoADTOUXe8hKi8jHW2AA/LJOxCk55NTYmdYf6dYSg6P9aspHurw7x1PPpTJlrNcL7pnDcfhqVOCZmz9pRS0vR7+fY/azEHlFr3diMFMFUH81bFD4FXF6UVOj5nVIxfn765mSxQgAAAA=) center/cover"></picture>
         </div>
         <h3 class="h3 card__title">Suite Junior Awara</h3>
         <p class="card__meta">78 m² · Vue océan & jardin</p>
@@ -258,7 +263,7 @@
       <article class="card" data-reveal>
         <div class="ph card__media ratio-4-5" data-reveal-img>
           <span class="card__tag">Signature</span>
-          <img src="assets/img/villa-maripa.jpg" alt="Villa Maripa et son bassin de nage privé bordé de pierre" loading="lazy">
+          <picture><source type="image/avif" srcset="assets/img/villa-maripa-480.avif 480w, assets/img/villa-maripa-800.avif 800w, assets/img/villa-maripa-1200.avif 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 707px, 680px"><source type="image/webp" srcset="assets/img/villa-maripa-480.webp 480w, assets/img/villa-maripa-800.webp 800w, assets/img/villa-maripa-1200.webp 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 707px, 680px"><img src="assets/img/villa-maripa.jpg" alt="Villa Maripa et son bassin de nage privé bordé de pierre" loading="lazy" width="1200" height="1500" decoding="async" style="background:url(data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAACwAwCdASoQABQAPt1apkyopSOiMAgBEBuJYwCw7CIcq3q5KpBxWAD+6CzyeNT/F+L0yCfT+dvHf00bRmYi6//+IZOGkym3dgnS3F8wZ5XHh1fGOJgJcDLub3cPXqx7TODbVbmv1zl44WZRnQ7jBnecZziHf83RZepy0+EE1oBHYfl11ViR/e0pXIFXMSCAAAA=) center/cover"></picture>
         </div>
         <h3 class="h3 card__title">Villa Maripa</h3>
         <p class="card__meta">140 m² · Bassin privé</p>
@@ -292,7 +297,7 @@
     <div class="split split--reverse">
       <div class="split__media">
         <div class="ph ratio-4-5" data-reveal-img>
-          <img src="assets/img/table-salle.jpg" alt="La salle du restaurant, tables rondes nappées de blanc et portes-fenêtres ouvertes" loading="lazy">
+          <picture><source type="image/avif" srcset="assets/img/table-salle-480.avif 480w, assets/img/table-salle-800.avif 800w, assets/img/table-salle-1200.avif 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 707px, 629px"><source type="image/webp" srcset="assets/img/table-salle-480.webp 480w, assets/img/table-salle-800.webp 800w, assets/img/table-salle-1200.webp 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 707px, 629px"><img src="assets/img/table-salle.jpg" alt="La salle du restaurant, tables rondes nappées de blanc et portes-fenêtres ouvertes" loading="lazy" width="1200" height="1500" decoding="async" style="background:url(data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABwBACdASoQABQAPt1apkyopSOiMAgBEBuJYwAFEB7nEXaUtiEvo6UnfCmrQAD+sTY5RNCaa3+wjSBK7kzN1VJKM3kL7cVZlNT7RuniBelKs4BA037SoZ9ut4qnDbBLb6p3JNRqQwc4j6g1Y0E3bIpjLtE2v1Zgldcn1rj2yk9khO8MypSEW13yosQBSRJGjbuAAA==) center/cover"></picture>
         </div>
       </div>
       <div class="split__body" data-reveal>
@@ -333,7 +338,7 @@
 
     <div class="exc-grid" data-stagger=".08">
       <a class="exc ph ratio-3-4" href="decouverte.html#salut" data-reveal-img>
-        <img src="assets/img/exc-salut.jpg" alt="Les Îles du Salut au large de Kourou" loading="lazy">
+        <picture><source type="image/avif" srcset="assets/img/exc-salut-480.avif 480w, assets/img/exc-salut-800.avif 800w, assets/img/exc-salut-1000.avif 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 341px, 424px"><source type="image/webp" srcset="assets/img/exc-salut-480.webp 480w, assets/img/exc-salut-800.webp 800w, assets/img/exc-salut-1000.webp 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 341px, 424px"><img src="assets/img/exc-salut.jpg" alt="Les Îles du Salut au large de Kourou" loading="lazy" width="1000" height="1333" decoding="async" style="background:url(data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAQBACdASoQABUAPt1cpkyopSOiMAgBEBuJQBOmUABWKvCGBgPXtTgNAADpBNWjOaFA4RQhInCSNPGRSIHJwYJKOxQU/tG1RNVj/UJINPWBL9p6Ul08+B+8I3v7lodky9eqR/h98eJW//mWmLo8BrcyGPcF+3LLqIiUc3LIBY3ocdgAAAA=) center/cover"></picture>
         <span class="exc__veil"></span>
         <span class="exc__body">
           <span class="exc__kicker">Journée · en mer</span>
@@ -344,7 +349,7 @@
       </a>
 
       <a class="exc ph ratio-3-4" href="decouverte.html#kaw" data-reveal-img>
-        <img src="assets/img/exc-kaw.jpg" alt="Les marais de Kaw au lever du jour" loading="lazy">
+        <picture><source type="image/avif" srcset="assets/img/exc-kaw-480.avif 480w, assets/img/exc-kaw-800.avif 800w, assets/img/exc-kaw-1000.avif 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 341px, 424px"><source type="image/webp" srcset="assets/img/exc-kaw-480.webp 480w, assets/img/exc-kaw-800.webp 800w, assets/img/exc-kaw-1000.webp 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 341px, 424px"><img src="assets/img/exc-kaw.jpg" alt="Les marais de Kaw au lever du jour" loading="lazy" width="1000" height="1333" decoding="async" style="background:url(data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAACwAwCdASoQABUAPt1cpkyopSOiMAgBEBuJZwC7ACHURkr3X1VNiAD+6tugF6oL722wlbE9In3VKOdSB5oRUE+gFLhoRrlED0XoIIHttc6aMwBSrxpjivEg3sS9lX+WOs39UhfLamGR75BgAAA=) center/cover"></picture>
         <span class="exc__veil"></span>
         <span class="exc__body">
           <span class="exc__kicker">2 jours · nuit en carbet</span>
@@ -355,7 +360,7 @@
       </a>
 
       <a class="exc ph ratio-3-4" href="decouverte.html#tortues" data-reveal-img>
-        <img src="assets/img/exc-tortues.jpg" alt="Tortue luth regagnant la mer après la ponte" loading="lazy">
+        <picture><source type="image/avif" srcset="assets/img/exc-tortues-480.avif 480w, assets/img/exc-tortues-800.avif 800w, assets/img/exc-tortues-1000.avif 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 341px, 424px"><source type="image/webp" srcset="assets/img/exc-tortues-480.webp 480w, assets/img/exc-tortues-800.webp 800w, assets/img/exc-tortues-1000.webp 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 341px, 424px"><img src="assets/img/exc-tortues.jpg" alt="Tortue luth regagnant la mer après la ponte" loading="lazy" width="1000" height="1333" decoding="async" style="background:url(data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAQBACdASoQABUAPt1apkyopSOiMAgBEBuJZwCzh3gAnYJyDK04iwOY4AD+85Mp9ALTCqaL/UvJ2D7/dD+Zx8L2hc3YVrHjtHXFZLZGEsUi0dGUhC/CLt/yjeUSCcv44iZVHoX50lIAmko2AAA=) center/cover"></picture>
         <span class="exc__veil"></span>
         <span class="exc__body">
           <span class="exc__kicker">Avril à juillet · nuit</span>
@@ -378,7 +383,7 @@
     <div class="split">
       <div class="split__media">
         <div class="ph ratio-4-3" data-reveal-img>
-          <img src="assets/img/spa-bassin.jpg" alt="Le bassin intérieur du spa sous charpente apparente" loading="lazy">
+          <picture><source type="image/avif" srcset="assets/img/spa-bassin-480.avif 480w, assets/img/spa-bassin-800.avif 800w, assets/img/spa-bassin-1280.avif 1280w, assets/img/spa-bassin-1400.avif 1400w" sizes="(max-width:600px) 350px, (max-width:1024px) 707px, 629px"><source type="image/webp" srcset="assets/img/spa-bassin-480.webp 480w, assets/img/spa-bassin-800.webp 800w, assets/img/spa-bassin-1280.webp 1280w, assets/img/spa-bassin-1400.webp 1400w" sizes="(max-width:600px) 350px, (max-width:1024px) 707px, 629px"><img src="assets/img/spa-bassin.jpg" alt="Le bassin intérieur du spa sous charpente apparente" loading="lazy" width="1400" height="1050" decoding="async" style="background:url(data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAABQAgCdASoQAAwAAwBSJZQCdIExgsCwfGOT25AA/tzl+Lt/k+toOjrLcVSVfR3Sg25IUBVeHsvRrOENmKIuhyZpJ7J7wvFHRWI/FDijA2mgAjfhtqhXOj23h+TGfJ9o0W53TAAA) center/cover"></picture>
         </div>
       </div>
       <div class="split__body" data-reveal>
@@ -431,7 +436,7 @@
 <!-- ============================================================ APPEL FINAL -->
 <section class="cta-band">
   <div class="cta-band__media">
-    <img src="assets/img/cta-band.jpg" alt="Le bassin à débordement de la Maison Rorota au crépuscule" loading="lazy">
+    <picture><source type="image/avif" srcset="assets/img/cta-band-480.avif 480w, assets/img/cta-band-800.avif 800w, assets/img/cta-band-1280.avif 1280w, assets/img/cta-band-1920.avif 1920w, assets/img/cta-band-2000.avif 2000w" sizes="100vw"><source type="image/webp" srcset="assets/img/cta-band-480.webp 480w, assets/img/cta-band-800.webp 800w, assets/img/cta-band-1280.webp 1280w, assets/img/cta-band-1920.webp 1920w, assets/img/cta-band-2000.webp 2000w" sizes="100vw"><img src="assets/img/cta-band.jpg" alt="Le bassin à débordement de la Maison Rorota au crépuscule" loading="lazy" width="2000" height="1125" decoding="async" style="background:url(data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACwAQCdASoQAAkAAwBSJZQC7ADwxt5gAP7qKx0L20izbyzj9ggw0dTb1FH80ZimDRnJIXiOFbBuWkjgbAwdOjLXF7LUAAAA) center/cover"></picture>
   </div>
   <div class="cta-band__inner wrap wrap--narrow">
     <p class="eyebrow is-centered" data-reveal>Réservation</p>

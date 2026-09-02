@@ -445,6 +445,12 @@ body.is-locked .header::before { opacity: 0; }
   overflow: hidden;
   background: var(--forest-700);
 }
+/* Le <picture> n'est qu'un aiguillage de formats : il ne doit pas exister
+   dans la mise en page. Sans cela il s'interposerait entre le conteneur et
+   l'image, et « height: 100% » ci-dessous se résoudrait contre lui — les
+   cadrages en object-fit s'effondreraient. */
+picture { display: contents; }
+
 .ph img {
   width: 100%;
   height: 100%;

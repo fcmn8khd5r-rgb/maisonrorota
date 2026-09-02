@@ -6,10 +6,15 @@
 <title>Galerie — Maison Rorota, Guyane</title>
 <meta name="description" content="La Maison Rorota en images : chambres et suites, la table, le spa, le bassin, le jardin et la Guyane alentour.">
 <meta name="theme-color" content="#0A1410">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=8">
+<!-- Polices servies depuis ce serveur. Elles venaient de Google : la
+     feuille distante bloquait le rendu le temps d'un aller-retour vers un
+     tiers, et chaque visiteur y exposait son adresse IP. -->
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="assets/fonts/cormorant-garamond-400-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="assets/fonts/jost-300-latin.woff2">
+<link rel="stylesheet" href="css/polices.css?v=1">
+<link rel="stylesheet" href="css/style.css?v=20">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A1410'/><text y='23' x='16' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%23C9A96A'>R</text></svg>">
 </head>
 <body>
@@ -60,7 +65,7 @@
 <!-- =================================================================== HERO -->
 <section class="hero hero--page">
   <div class="hero__media">
-    <img src="assets/img/hero-galerie.jpg" alt="Le bassin de la Maison Rorota bordé de parasols" fetchpriority="high">
+    <picture><source type="image/avif" srcset="assets/img/hero-galerie-480.avif 480w, assets/img/hero-galerie-800.avif 800w, assets/img/hero-galerie-1280.avif 1280w, assets/img/hero-galerie-1920.avif 1920w, assets/img/hero-galerie-2000.avif 2000w" sizes="100vw"><source type="image/webp" srcset="assets/img/hero-galerie-480.webp 480w, assets/img/hero-galerie-800.webp 800w, assets/img/hero-galerie-1280.webp 1280w, assets/img/hero-galerie-1920.webp 1920w, assets/img/hero-galerie-2000.webp 2000w" sizes="100vw"><img src="assets/img/hero-galerie.jpg" alt="Le bassin de la Maison Rorota bordé de parasols" fetchpriority="high" width="2000" height="1125" decoding="async" style="background:url(data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACQAQCdASoQAAkAAwBSJQBOgBCLrNAA/vGgfB66Hb52tMq53I/Yl5EmDzOJJMQCVcvWykJuEN/Q3X6TBLu2sW7SOJnqBBmwRkQieYAA) center/cover"></picture>
   </div>
   <div class="hero__inner">
     <p class="crumb"><a href="index.html">Accueil</a> &nbsp;/&nbsp; Galerie</p>
@@ -80,134 +85,134 @@
     <div class="gal" data-stagger=".05">
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-01.jpg" data-caption="L'entrée à l'heure bleue">
-        <img src="assets/img/gal-01.jpg" alt="L'entrée de la maison éclairée à la tombée du jour" loading="lazy">
+              data-lightbox="assets/img/gal-01-1200.webp" data-caption="L'entrée à l'heure bleue">
+        <picture><source type="image/avif" srcset="assets/img/gal-01-480.avif 480w, assets/img/gal-01-800.avif 800w, assets/img/gal-01-1200.avif 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-01-480.webp 480w, assets/img/gal-01-800.webp 800w, assets/img/gal-01-1200.webp 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-01.jpg" alt="L'entrée de la maison éclairée à la tombée du jour" loading="lazy" width="1200" height="900" decoding="async" style="background:url(data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAwAgCdASoQAAwAAwBSJZACdH8AFkZEF9j6QADMo9RG1pguNvl+Ou6Nbul9Sny9SCp9mJIXPMUN/z4RtG+ozXWqbC9VIrnrkPmffySfD/wmfXYdBNm6QSD5fKyiKgAA) center/cover"></picture>
         <span class="gal__cap">L'entrée à l'heure bleue</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-02.jpg" data-caption="Suite Junior Awara">
-        <img src="assets/img/gal-02.jpg" alt="Lit à baldaquin drapé de mousseline dans la Suite Awara" loading="lazy">
+              data-lightbox="assets/img/gal-02-1000.webp" data-caption="Suite Junior Awara">
+        <picture><source type="image/avif" srcset="assets/img/gal-02-480.avif 480w, assets/img/gal-02-800.avif 800w, assets/img/gal-02-1000.avif 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-02-480.webp 480w, assets/img/gal-02-800.webp 800w, assets/img/gal-02-1000.webp 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-02.jpg" alt="Lit à baldaquin drapé de mousseline dans la Suite Awara" loading="lazy" width="1000" height="1333" decoding="async" style="background:url(data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAABwBACdASoQABUAPt1apkyopSOiMAgBEBuJYgCdMoRwACnKWS3KJ/eo8jZLAAD4WaOOszd7JqUuiGEMfJyaDjh6YMu9FNXwwk+eDAgtCCfkWTm2usgFIrdpvFAMMU06acUry34BaW3MVj6a5DqUMeUPndgimhQ6jhLRawmArPK1wCCeCpalFKAAAAA=) center/cover"></picture>
         <span class="gal__cap">Suite Junior Awara</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-03.jpg" data-caption="Le bassin à débordement">
-        <img src="assets/img/gal-03.jpg" alt="Bassin à débordement bordé de parasols blancs" loading="lazy">
+              data-lightbox="assets/img/gal-03-1200.webp" data-caption="Le bassin à débordement">
+        <picture><source type="image/avif" srcset="assets/img/gal-03-480.avif 480w, assets/img/gal-03-800.avif 800w, assets/img/gal-03-1200.avif 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-03-480.webp 480w, assets/img/gal-03-800.webp 800w, assets/img/gal-03-1200.webp 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-03.jpg" alt="Bassin à débordement bordé de parasols blancs" loading="lazy" width="1200" height="900" decoding="async" style="background:url(data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwAQCdASoQAAwAAwBSJQBOgBuV2sf/hhAA/tJW47e/jm6TQsTv7Kd286JncFmiu/IPv2YWDxcH+3SyjXxYqZEYfAx9khDMOJY9z4Drzkjk1ZRsuw8mJvshwOvyWhHnBVb0rmSaAAA=) center/cover"></picture>
         <span class="gal__cap">Le bassin à débordement</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-04.jpg" data-caption="La Table de Rorota">
-        <img src="assets/img/gal-04.jpg" alt="Salle du restaurant, tables rondes nappées de blanc" loading="lazy">
+              data-lightbox="assets/img/gal-04-1200.webp" data-caption="La Table de Rorota">
+        <picture><source type="image/avif" srcset="assets/img/gal-04-480.avif 480w, assets/img/gal-04-800.avif 800w, assets/img/gal-04-1200.avif 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-04-480.webp 480w, assets/img/gal-04-800.webp 800w, assets/img/gal-04-1200.webp 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-04.jpg" alt="Salle du restaurant, tables rondes nappées de blanc" loading="lazy" width="1200" height="900" decoding="async" style="background:url(data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAwAgCdASoQAAwAAwBSJYgC7AEfZroIG99IAAD+177ii7vbR6N3Xq4qLhZlT+XJ5a6rqv9bvEecQvOmh+nQBowYsuOa5jJf1LJ5qjPhgkZsYpbYk8Zb18pBSXAAAA==) center/cover"></picture>
         <span class="gal__cap">La Table de Rorota</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-05.jpg" data-caption="Baignoire îlot, Chambre Prestige">
-        <img src="assets/img/gal-05.jpg" alt="Baignoire îlot devant une fenêtre à petits carreaux" loading="lazy">
+              data-lightbox="assets/img/gal-05-1000.webp" data-caption="Baignoire îlot, Chambre Prestige">
+        <picture><source type="image/avif" srcset="assets/img/gal-05-480.avif 480w, assets/img/gal-05-800.avif 800w, assets/img/gal-05-1000.avif 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-05-480.webp 480w, assets/img/gal-05-800.webp 800w, assets/img/gal-05-1000.webp 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-05.jpg" alt="Baignoire îlot devant une fenêtre à petits carreaux" loading="lazy" width="1000" height="1333" decoding="async" style="background:url(data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAADwAwCdASoQABUAPt1apkyopSOiMAgBEBuJYwCdAB6Rq9jd71E83SDoAP5llp3z5m5YFffpS4k6Qc5fHZW7UwRXGZJuyWkCkg1Hxv7E9CK9O/vMuVfzBzwYN5ylzg1S2wEMswtU2sVtAAkFtstnK/H8lw/xZco2B2oEghqQfQQDjnRoPvPlGYkF50AAAA==) center/cover"></picture>
         <span class="gal__cap">Baignoire îlot, Chambre Prestige</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-06.jpg" data-caption="La bibliothèque">
-        <img src="assets/img/gal-06.jpg" alt="Bibliothèque aux rayonnages de bois et grande table ronde" loading="lazy">
+              data-lightbox="assets/img/gal-06-1200.webp" data-caption="La bibliothèque">
+        <picture><source type="image/avif" srcset="assets/img/gal-06-480.avif 480w, assets/img/gal-06-800.avif 800w, assets/img/gal-06-1200.avif 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-06-480.webp 480w, assets/img/gal-06-800.webp 800w, assets/img/gal-06-1200.webp 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-06.jpg" alt="Bibliothèque aux rayonnages de bois et grande table ronde" loading="lazy" width="1200" height="900" decoding="async" style="background:url(data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAQCdASoQAAwAAwBSJaACdACRXCVM7OAA+5qjRpmA3IQk8/UWUOt98uHblbXLGDdyGD7fep8hrJ6qBeITdf2T1/YGeeWK8TN57PoDp1enlU3YOZYAAA==) center/cover"></picture>
         <span class="gal__cap">La bibliothèque</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-07.jpg" data-caption="Villa Maripa et son bassin privé">
-        <img src="assets/img/gal-07.jpg" alt="Bassin de nage privé de la Villa Maripa" loading="lazy">
+              data-lightbox="assets/img/gal-07-1200.webp" data-caption="Villa Maripa et son bassin privé">
+        <picture><source type="image/avif" srcset="assets/img/gal-07-480.avif 480w, assets/img/gal-07-800.avif 800w, assets/img/gal-07-1200.avif 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-07-480.webp 480w, assets/img/gal-07-800.webp 800w, assets/img/gal-07-1200.webp 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-07.jpg" alt="Bassin de nage privé de la Villa Maripa" loading="lazy" width="1200" height="900" decoding="async" style="background:url(data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAACwAQCdASoQAAwAAwBSJQBdgCGHFf2AAP7hqkoQ4R782Z92zohl9kWQ8PQXWjHJNkZT0/wgc1xScPmIrxD4FNiDVVItkfmtgeug4QQICmqe6JncIlN07qnhoxYuDT7n0OAAAA==) center/cover"></picture>
         <span class="gal__cap">Villa Maripa et son bassin privé</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-08.jpg" data-caption="Table dressée">
-        <img src="assets/img/gal-08.jpg" alt="Nappe blanche et couverts sur une table ronde" loading="lazy">
+              data-lightbox="assets/img/gal-08-1000.webp" data-caption="Table dressée">
+        <picture><source type="image/avif" srcset="assets/img/gal-08-480.avif 480w, assets/img/gal-08-800.avif 800w, assets/img/gal-08-1000.avif 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-08-480.webp 480w, assets/img/gal-08-800.webp 800w, assets/img/gal-08-1000.webp 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-08.jpg" alt="Nappe blanche et couverts sur une table ronde" loading="lazy" width="1000" height="1000" decoding="async" style="background:url(data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwAQCdASoQABAAAwBSJQBOgCL9GvU91TAA/vT9Gi/15Qrpd4LHowACvQnmhLJRLS1XiuHD/g40M/FbHzXa2u41Ws0U5fSi/K1W44jCaaV+j1QJqCV5H+aSeR/r32fNiJpAmrmAAAA=) center/cover"></picture>
         <span class="gal__cap">Table dressée</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-09.jpg" data-caption="Le bassin du spa">
-        <img src="assets/img/gal-09.jpg" alt="Bassin intérieur du spa sous charpente de bois" loading="lazy">
+              data-lightbox="assets/img/gal-09-1000.webp" data-caption="Le bassin du spa">
+        <picture><source type="image/avif" srcset="assets/img/gal-09-480.avif 480w, assets/img/gal-09-800.avif 800w, assets/img/gal-09-1000.avif 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-09-480.webp 480w, assets/img/gal-09-800.webp 800w, assets/img/gal-09-1000.webp 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-09.jpg" alt="Bassin intérieur du spa sous charpente de bois" loading="lazy" width="1000" height="1333" decoding="async" style="background:url(data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAwBACdASoQABUAPt1apkyopSOiMAgBEBuJQBOmUI4ABTkDQYNbE/5yJzAA/ak+dL1RFbB68NN7S/rOHYc/aLkQNbnueL0Y280hlQ0/T3KybU1WTYfOv9ze3vmbs9R9k6oiqdjWEFQSgNFMwIAAAA==) center/cover"></picture>
         <span class="gal__cap">Le bassin du spa</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-10.jpg" data-caption="L'aile ouest">
-        <img src="assets/img/gal-10.jpg" alt="Façade blanche et charpente apparente de l'aile ouest" loading="lazy">
+              data-lightbox="assets/img/gal-10-1200.webp" data-caption="L'aile ouest">
+        <picture><source type="image/avif" srcset="assets/img/gal-10-480.avif 480w, assets/img/gal-10-800.avif 800w, assets/img/gal-10-1200.avif 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-10-480.webp 480w, assets/img/gal-10-800.webp 800w, assets/img/gal-10-1200.webp 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-10.jpg" alt="Façade blanche et charpente apparente de l'aile ouest" loading="lazy" width="1200" height="900" decoding="async" style="background:url(data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADwAQCdASoQAAwAAwBSJZACdADPvFWx2WgA/mfNfgv9NV5/M+FqeyzHp14s2cgYdb4Mm5u6gQUNbGRdENB+cNK9HLQFf53y+ObsRySQdMTx3YB74SCp3ADcMKATZ1BWa8NWPi+Ku1GJiAAA) center/cover"></picture>
         <span class="gal__cap">L'aile ouest</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-11.jpg" data-caption="Chambre Prestige Atlantique">
-        <img src="assets/img/gal-11.jpg" alt="Lit à baldaquin face aux portes-fenêtres" loading="lazy">
+              data-lightbox="assets/img/gal-11-1000.webp" data-caption="Chambre Prestige Atlantique">
+        <picture><source type="image/avif" srcset="assets/img/gal-11-480.avif 480w, assets/img/gal-11-800.avif 800w, assets/img/gal-11-1000.avif 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-11-480.webp 480w, assets/img/gal-11-800.webp 800w, assets/img/gal-11-1000.webp 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-11.jpg" alt="Lit à baldaquin face aux portes-fenêtres" loading="lazy" width="1000" height="1333" decoding="async" style="background:url(data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAwBACdASoQABUAPt1apkyopSOiMAgBEBuJQBOgBDwJlraf9kDg2LAcaPQA9413AFZDcFSBsjCp5z+wG2ZzAn6AwojfuHYSlXHjTEuG01VZlfnWI/mFIpFoPiZWBZft5bYhY2Xdfd+DJ8zmmYMAa0XUCuSwSEu9PhBVc84+gAA=) center/cover"></picture>
         <span class="gal__cap">Chambre Prestige Atlantique</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-12.jpg" data-caption="Le sauna">
-        <img src="assets/img/gal-12.jpg" alt="Sauna en bois clair" loading="lazy">
+              data-lightbox="assets/img/gal-12-1200.webp" data-caption="Le sauna">
+        <picture><source type="image/avif" srcset="assets/img/gal-12-480.avif 480w, assets/img/gal-12-800.avif 800w, assets/img/gal-12-1200.avif 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-12-480.webp 480w, assets/img/gal-12-800.webp 800w, assets/img/gal-12-1200.webp 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-12.jpg" alt="Sauna en bois clair" loading="lazy" width="1200" height="900" decoding="async" style="background:url(data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQAgCdASoQAAwAAwBSJbACdAEYAVucSf+AAP6v/WiWHk5MXUf7rgjmtdjOkC3EkqXZ+huRgCuuPiRFo6tSe1tTTBY+Q2Awf6jnQ93IsZM+Ofkq3PUndSggsAA=) center/cover"></picture>
         <span class="gal__cap">Le sauna</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-13.jpg" data-caption="La galerie du restaurant">
-        <img src="assets/img/gal-13.jpg" alt="Enfilade de portes vertes le long de la galerie" loading="lazy">
+              data-lightbox="assets/img/gal-13-1200.webp" data-caption="La galerie du restaurant">
+        <picture><source type="image/avif" srcset="assets/img/gal-13-480.avif 480w, assets/img/gal-13-800.avif 800w, assets/img/gal-13-1200.avif 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-13-480.webp 480w, assets/img/gal-13-800.webp 800w, assets/img/gal-13-1200.webp 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-13.jpg" alt="Enfilade de portes vertes le long de la galerie" loading="lazy" width="1200" height="900" decoding="async" style="background:url(data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAQCdASoQAAwAAwBSJQBOgBbKileXS6wA+X+eHRQZU+doxCw31G0X3NMAy0O91b8PElKZcSoq+Ho0pSM+dR5vdnxtoaWrmdf35NqAKib/yjlo2r/EBPaILoQAAA==) center/cover"></picture>
         <span class="gal__cap">La galerie du restaurant</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-14.jpg" data-caption="Couloir vers le spa">
-        <img src="assets/img/gal-14.jpg" alt="Long couloir menant au bassin du spa" loading="lazy">
+              data-lightbox="assets/img/gal-14-900.webp" data-caption="Couloir vers le spa">
+        <picture><source type="image/avif" srcset="assets/img/gal-14-480.avif 480w, assets/img/gal-14-800.avif 800w, assets/img/gal-14-900.avif 900w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-14-480.webp 480w, assets/img/gal-14-800.webp 800w, assets/img/gal-14-900.webp 900w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-14.jpg" alt="Long couloir menant au bassin du spa" loading="lazy" width="900" height="1350" decoding="async" style="background:url(data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAABQBACdASoQABgAPt1apkyopSOiMAgBEBuJQBOmUFqAAi5xNK0XhrI9ZEsAAP7rsJpjZwcnvZkuCQYwjj2Ac94Syxp60wx4mvdI2I9s52GMLoGqQYQ/qf2henuFpEjyFYpNuEfolc2CAY5PmSImH1dhkpjjppKXKvixF6vzJ4fA6fUAAAA=) center/cover"></picture>
         <span class="gal__cap">Couloir vers le spa</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-15.jpg" data-caption="Le bassin, vu du jardin">
-        <img src="assets/img/gal-15.jpg" alt="Le bassin et le bâtiment principal vus depuis le jardin" loading="lazy">
+              data-lightbox="assets/img/gal-15-1200.webp" data-caption="Le bassin, vu du jardin">
+        <picture><source type="image/avif" srcset="assets/img/gal-15-480.avif 480w, assets/img/gal-15-800.avif 800w, assets/img/gal-15-1200.avif 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-15-480.webp 480w, assets/img/gal-15-800.webp 800w, assets/img/gal-15-1200.webp 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-15.jpg" alt="Le bassin et le bâtiment principal vus depuis le jardin" loading="lazy" width="1200" height="900" decoding="async" style="background:url(data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADwAQCdASoQAAwAAwBSJQBOgCEsxou3IwwA/t1vLNeDcN/6O1ajG8V4Ba2a3sJz8zSMarr3/gxAfdsixYrftzr2l69PnbnM05A2AcsvzMPBjZteS1B5X2OLtA3jwAAA) center/cover"></picture>
         <span class="gal__cap">Le bassin, vu du jardin</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-16.jpg" data-caption="Cabine de soin">
-        <img src="assets/img/gal-16.jpg" alt="Table de massage dans une cabine ouverte sur le jardin" loading="lazy">
+              data-lightbox="assets/img/gal-16-1200.webp" data-caption="Cabine de soin">
+        <picture><source type="image/avif" srcset="assets/img/gal-16-480.avif 480w, assets/img/gal-16-800.avif 800w, assets/img/gal-16-1200.avif 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-16-480.webp 480w, assets/img/gal-16-800.webp 800w, assets/img/gal-16-1200.webp 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-16.jpg" alt="Table de massage dans une cabine ouverte sur le jardin" loading="lazy" width="1200" height="900" decoding="async" style="background:url(data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQAgCdASoQAAwAAwBSJZgCdAD7At7Ol1bAAP47ovTh4riZu2OP4UOo/S2+SisTH/MF8Mn/iaQExRGuU7SRZzx4Noy/CBlATiTpwSNe9Vr5+3Stm4EySbHeAAA=) center/cover"></picture>
         <span class="gal__cap">Cabine de soin</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-17.jpg" data-caption="Suite Canopée">
-        <img src="assets/img/gal-17.jpg" alt="Lit à baldaquin de la Suite Canopée" loading="lazy">
+              data-lightbox="assets/img/gal-17-1000.webp" data-caption="Suite Canopée">
+        <picture><source type="image/avif" srcset="assets/img/gal-17-480.avif 480w, assets/img/gal-17-800.avif 800w, assets/img/gal-17-1000.avif 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-17-480.webp 480w, assets/img/gal-17-800.webp 800w, assets/img/gal-17-1000.webp 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-17.jpg" alt="Lit à baldaquin de la Suite Canopée" loading="lazy" width="1000" height="1333" decoding="async" style="background:url(data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAADQAwCdASoQABUAPt1cpkyopSOiMAgBEBuJQBOgBFKUw8ZRrl43KKwA+FmjUE7O0eZQuqmOsLpFRrelt0O4HCz5AKrRDIDcmh5W9dTSofmrRW2pgJM8JnI+Ia9TWM2S9F4sXlN+YrPZYD+NlzV0GxUsZRZXHyOFO67AAA==) center/cover"></picture>
         <span class="gal__cap">Suite Canopée</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-18.jpg" data-caption="Le salon de lecture">
-        <img src="assets/img/gal-18.jpg" alt="Salon de lecture et rayonnages de bois" loading="lazy">
+              data-lightbox="assets/img/gal-18-1200.webp" data-caption="Le salon de lecture">
+        <picture><source type="image/avif" srcset="assets/img/gal-18-480.avif 480w, assets/img/gal-18-800.avif 800w, assets/img/gal-18-1200.avif 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-18-480.webp 480w, assets/img/gal-18-800.webp 800w, assets/img/gal-18-1200.webp 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-18.jpg" alt="Salon de lecture et rayonnages de bois" loading="lazy" width="1200" height="900" decoding="async" style="background:url(data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAABwAgCdASoQAAwAAwBSJYgCdAYwxy04lrFMeCIAAP5+jKcM0zYgI+BTTHPksmgBaQQJdWENSlqcy341MS0BI4LZ4m7rrgKrot/HGNfMXoQdAtHjACtvRgU/rUcpWNKgd8P/G/bIAAA=) center/cover"></picture>
         <span class="gal__cap">Le salon de lecture</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-19.jpg" data-caption="La canopée au lever du jour">
-        <img src="assets/img/gal-19.jpg" alt="Brume sur la canopée amazonienne" loading="lazy">
+              data-lightbox="assets/img/gal-19-1200.webp" data-caption="La canopée au lever du jour">
+        <picture><source type="image/avif" srcset="assets/img/gal-19-480.avif 480w, assets/img/gal-19-800.avif 800w, assets/img/gal-19-1200.avif 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-19-480.webp 480w, assets/img/gal-19-800.webp 800w, assets/img/gal-19-1200.webp 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-19.jpg" alt="Brume sur la canopée amazonienne" loading="lazy" width="1200" height="900" decoding="async" style="background:url(data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAQCdASoQAAwAAwBSJZwAAuXdaPZLAAD+9jIUbxfd7x3qdziG753aTBRCbC//9Mw1/GpC43ezxvXuOw0Q3qG+FXE881zcazZM/Vs2YrsAAA==) center/cover"></picture>
         <span class="gal__cap">La canopée au lever du jour</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-20.jpg" data-caption="Les Îles du Salut">
-        <img src="assets/img/gal-20.jpg" alt="Les Îles du Salut aperçues entre les cocotiers" loading="lazy">
+              data-lightbox="assets/img/gal-20-1000.webp" data-caption="Les Îles du Salut">
+        <picture><source type="image/avif" srcset="assets/img/gal-20-480.avif 480w, assets/img/gal-20-800.avif 800w, assets/img/gal-20-1000.avif 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-20-480.webp 480w, assets/img/gal-20-800.webp 800w, assets/img/gal-20-1000.webp 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-20.jpg" alt="Les Îles du Salut aperçues entre les cocotiers" loading="lazy" width="1000" height="1333" decoding="async" style="background:url(data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAQBACdASoQABUAPt1cpkyopSOiMAgBEBuJQBOmUABWKvCGBgPXtTgNAADpBNWjOaFA4RQhInCSNPGRSIHJwYJKOxQU/tG1RNVj/UJINPWBL9p6Ul08+B+8I3v7lodky9eqR/h98eJW//mWmLo8BrcyGPcF+3LLqIiUc3LIBY3ocdgAAAA=) center/cover"></picture>
         <span class="gal__cap">Les Îles du Salut</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-21.jpg" data-caption="Ibis rouge">
-        <img src="assets/img/gal-21.jpg" alt="Ibis rouge perché sur une branche de palétuvier" loading="lazy">
+              data-lightbox="assets/img/gal-21-1200.webp" data-caption="Ibis rouge">
+        <picture><source type="image/avif" srcset="assets/img/gal-21-480.avif 480w, assets/img/gal-21-800.avif 800w, assets/img/gal-21-1200.avif 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-21-480.webp 480w, assets/img/gal-21-800.webp 800w, assets/img/gal-21-1200.webp 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-21.jpg" alt="Ibis rouge perché sur une branche de palétuvier" loading="lazy" width="1200" height="900" decoding="async" style="background:url(data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAQAgCdASoQAAwAAwBSJbACsAYuvdPT1QoAAPtkmshfGZ58RX/3IfAvsx+ljVGLBIizDfCVqhVjwaI5nlEFaXIsCRYoBOEHdWwGi9wIGkC1PP/eVnZzib+hQ1TxTX3+YM1EAAAA) center/cover"></picture>
         <span class="gal__cap">Ibis rouge</span>
       </button>
 
       <button class="gal__item ph" type="button" data-reveal-img
-              data-lightbox="assets/img/gal-22.jpg" data-caption="Lancement vu depuis la plage">
-        <img src="assets/img/gal-22.jpg" alt="Traînée d'un lancement dans le ciel du soir, vue de la plage" loading="lazy">
+              data-lightbox="assets/img/gal-22-1200.webp" data-caption="Lancement vu depuis la plage">
+        <picture><source type="image/avif" srcset="assets/img/gal-22-480.avif 480w, assets/img/gal-22-800.avif 800w, assets/img/gal-22-1200.avif 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><source type="image/webp" srcset="assets/img/gal-22-480.webp 480w, assets/img/gal-22-800.webp 800w, assets/img/gal-22-1200.webp 1200w" sizes="(max-width:600px) 350px, (max-width:1024px) 348px, 436px"><img src="assets/img/gal-22.jpg" alt="Traînée d'un lancement dans le ciel du soir, vue de la plage" loading="lazy" width="1200" height="900" decoding="async" style="background:url(data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoQAAwAAwBSJagCdAEPdjOp2XtIAP7wSpj9RJh3QxSn+YMhbIf+3qUFq8HB1SM0nBJ6WoRL9lMFfqRQtNaG1W8tcWdUkAAA) center/cover"></picture>
         <span class="gal__cap">Lancement vu depuis la plage</span>
       </button>
 
@@ -218,7 +223,7 @@
 <!-- ============================================================ APPEL FINAL -->
 <section class="cta-band">
   <div class="cta-band__media">
-    <img src="assets/img/cta-contact.jpg" alt="Le bassin et le bâtiment principal au crépuscule" loading="lazy">
+    <picture><source type="image/avif" srcset="assets/img/cta-contact-480.avif 480w, assets/img/cta-contact-800.avif 800w, assets/img/cta-contact-1280.avif 1280w, assets/img/cta-contact-1920.avif 1920w, assets/img/cta-contact-2000.avif 2000w" sizes="100vw"><source type="image/webp" srcset="assets/img/cta-contact-480.webp 480w, assets/img/cta-contact-800.webp 800w, assets/img/cta-contact-1280.webp 1280w, assets/img/cta-contact-1920.webp 1920w, assets/img/cta-contact-2000.webp 2000w" sizes="100vw"><img src="assets/img/cta-contact.jpg" alt="Le bassin et le bâtiment principal au crépuscule" loading="lazy" width="2000" height="1125" decoding="async" style="background:url(data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAwAgCdASoQAAkAAwBSJYwC7AEWUt8OLD6qAAD+7A8Imbs5jalHniz2KO0PqkLWUAhdjIjvlxwdtil2jJA/yKu4lorPA+1iB5OlykKYgAA=) center/cover"></picture>
   </div>
   <div class="cta-band__inner wrap wrap--narrow">
     <p class="eyebrow is-centered" data-reveal>Réservation</p>

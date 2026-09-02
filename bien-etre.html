@@ -6,10 +6,15 @@
 <title>Spa Wassaï &amp; bien-être — Maison Rorota, Guyane</title>
 <meta name="description" content="Le Spa Wassaï de la Maison Rorota : trois cabines, bassin d'eau froide, hammam et sauna. Soins aux plantes de Guyane, bassin à débordement et plage privée à Rémire-Montjoly.">
 <meta name="theme-color" content="#0A1410">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=8">
+<!-- Polices servies depuis ce serveur. Elles venaient de Google : la
+     feuille distante bloquait le rendu le temps d'un aller-retour vers un
+     tiers, et chaque visiteur y exposait son adresse IP. -->
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="assets/fonts/cormorant-garamond-400-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="assets/fonts/jost-300-latin.woff2">
+<link rel="stylesheet" href="css/polices.css?v=1">
+<link rel="stylesheet" href="css/style.css?v=20">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A1410'/><text y='23' x='16' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%23C9A96A'>R</text></svg>">
 </head>
 <body>
@@ -60,7 +65,7 @@
 <!-- =================================================================== HERO -->
 <section class="hero hero--page">
   <div class="hero__media">
-    <img src="assets/img/hero-bienetre.jpg" alt="Le bassin intérieur du spa sous une charpente de bois clair" fetchpriority="high">
+    <picture><source type="image/avif" srcset="assets/img/hero-bienetre-480.avif 480w, assets/img/hero-bienetre-800.avif 800w, assets/img/hero-bienetre-1280.avif 1280w, assets/img/hero-bienetre-1920.avif 1920w, assets/img/hero-bienetre-2000.avif 2000w" sizes="100vw"><source type="image/webp" srcset="assets/img/hero-bienetre-480.webp 480w, assets/img/hero-bienetre-800.webp 800w, assets/img/hero-bienetre-1280.webp 1280w, assets/img/hero-bienetre-1920.webp 1920w, assets/img/hero-bienetre-2000.webp 2000w" sizes="100vw"><img src="assets/img/hero-bienetre.jpg" alt="Le bassin intérieur du spa sous une charpente de bois clair" fetchpriority="high" width="2000" height="1125" decoding="async" style="background:url(data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAQCdASoQAAkAAwBSJZACdAD1ip934AD+g9lHVvLfuQc8/lgRib5xSH7DNvKWJ7eQLYp98cqzu/zh6I+L98QXcaekycHfE376zyAA) center/cover"></picture>
   </div>
   <div class="hero__inner">
     <p class="crumb"><a href="index.html">Accueil</a> &nbsp;/&nbsp; Bien-être</p>
@@ -80,10 +85,10 @@
     <div class="split">
       <div class="split__media stack-media">
         <div class="ph ratio-3-4 stack-media__main" data-reveal-img>
-          <img src="assets/img/spa-massage.jpg" alt="Cabine de massage ouverte sur le jardin" loading="lazy">
+          <picture><source type="image/avif" srcset="assets/img/spa-massage-480.avif 480w, assets/img/spa-massage-800.avif 800w, assets/img/spa-massage-1280.avif 1280w, assets/img/spa-massage-1400.avif 1400w" sizes="(max-width:600px) 350px, (max-width:1024px) 707px, 629px"><source type="image/webp" srcset="assets/img/spa-massage-480.webp 480w, assets/img/spa-massage-800.webp 800w, assets/img/spa-massage-1280.webp 1280w, assets/img/spa-massage-1400.webp 1400w" sizes="(max-width:600px) 350px, (max-width:1024px) 707px, 629px"><img src="assets/img/spa-massage.jpg" alt="Cabine de massage ouverte sur le jardin" loading="lazy" width="1400" height="1050" decoding="async" style="background:url(data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAwAgCdASoQAAwAAwBSJZgCdAD7At7OmfQYAAD+O6L04eK4mbtjj+FDqP1WA+0TJSXcO1EO+5vD1W4yXOmIVTLLbwuTb/DJAWUrybSgte9Vr5/E+Dcd0VCpVGgAAA==) center/cover"></picture>
         </div>
         <div class="ph ratio-1-1 stack-media__inset" data-reveal-img style="--d:.2s">
-          <img src="assets/img/spa-sauna.jpg" alt="Sauna en bois clair" loading="lazy">
+          <picture><source type="image/avif" srcset="assets/img/spa-sauna-480.avif 480w, assets/img/spa-sauna-800.avif 800w" sizes="(max-width:600px) 350px, (max-width:1024px) 309px, 273px"><source type="image/webp" srcset="assets/img/spa-sauna-480.webp 480w, assets/img/spa-sauna-800.webp 800w" sizes="(max-width:600px) 350px, (max-width:1024px) 309px, 273px"><img src="assets/img/spa-sauna.jpg" alt="Sauna en bois clair" loading="lazy" width="800" height="800" decoding="async" style="background:url(data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQAgCdASoQABAAAwBSJbACdADRtI3p7NGAAP4JysxySiDPdYn29Yt29MPKkrZmjmHglJJ1Vpm8RPXKeZQHPbw04W46kJmW+OXvrB/mOO4edizUNPtT97N3Hs9jIAAA) center/cover"></picture>
         </div>
       </div>
       <div class="split__body" data-reveal>
@@ -234,7 +239,7 @@
     <div class="split split--reverse">
       <div class="split__media">
         <div class="ph ratio-4-3" data-reveal-img>
-          <img src="assets/img/pool-1.jpg" alt="Le bassin à débordement bordé de parasols blancs" loading="lazy">
+          <picture><source type="image/avif" srcset="assets/img/pool-1-480.avif 480w, assets/img/pool-1-800.avif 800w, assets/img/pool-1-1280.avif 1280w, assets/img/pool-1-1400.avif 1400w" sizes="(max-width:600px) 350px, (max-width:1024px) 707px, 629px"><source type="image/webp" srcset="assets/img/pool-1-480.webp 480w, assets/img/pool-1-800.webp 800w, assets/img/pool-1-1280.webp 1280w, assets/img/pool-1-1400.webp 1400w" sizes="(max-width:600px) 350px, (max-width:1024px) 707px, 629px"><img src="assets/img/pool-1.jpg" alt="Le bassin à débordement bordé de parasols blancs" loading="lazy" width="1400" height="1050" decoding="async" style="background:url(data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADwAQCdASoQAAwAAwBSJQBOgCEsxou3IjAA/t1vLNeDcN/6O1ajG8V4Ba2a3sJz8zSMarr3/gxAfdsixYrftzr2l69PnbnM05A2AcsvzMPBjZteS1B5X2JGUAFOgAAA) center/cover"></picture>
         </div>
       </div>
       <div class="split__body" data-reveal>
@@ -268,7 +273,7 @@
     <div class="split">
       <div class="split__media">
         <div class="ph ratio-4-3" data-reveal-img>
-          <img src="assets/img/exc-plage.jpg" alt="La plage de Montjoly et son promontoire boisé" loading="lazy">
+          <picture><source type="image/avif" srcset="assets/img/exc-plage-480.avif 480w, assets/img/exc-plage-800.avif 800w, assets/img/exc-plage-1000.avif 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 707px, 629px"><source type="image/webp" srcset="assets/img/exc-plage-480.webp 480w, assets/img/exc-plage-800.webp 800w, assets/img/exc-plage-1000.webp 1000w" sizes="(max-width:600px) 350px, (max-width:1024px) 707px, 629px"><img src="assets/img/exc-plage.jpg" alt="La plage de Montjoly et son promontoire boisé" loading="lazy" width="1000" height="1333" decoding="async" style="background:url(data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADwAwCdASoQABUAPt1ep00opSOiMAgBEBuJQBOmUABp1avzy7pbm4MgAP7vtLZvMczswMnOJRDQT8nHdlRpnGqFh/eR5Kiy0/AZmtJATWLxcF8GXRqHpql1Zhy3+u/CvME8R/Z3Xayl2wxi4NdwAAAA) center/cover"></picture>
         </div>
       </div>
       <div class="split__body" data-reveal>
@@ -305,7 +310,7 @@
     <div class="grid grid-3" data-stagger=".09">
       <article class="card" data-reveal>
         <div class="ph card__media ratio-4-3" data-reveal-img>
-          <img src="assets/img/d-bibli.jpg" alt="La bibliothèque et sa grande table ronde" loading="lazy">
+          <picture><source type="image/avif" srcset="assets/img/d-bibli-480.avif 480w, assets/img/d-bibli-800.avif 800w" sizes="(max-width:600px) 350px, (max-width:1024px) 341px, 419px"><source type="image/webp" srcset="assets/img/d-bibli-480.webp 480w, assets/img/d-bibli-800.webp 800w" sizes="(max-width:600px) 350px, (max-width:1024px) 341px, 419px"><img src="assets/img/d-bibli.jpg" alt="La bibliothèque et sa grande table ronde" loading="lazy" width="800" height="800" decoding="async" style="background:url(data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADQAQCdASoQABAAAwBSJbACdAC9COGr0ADyltu89+cnqkjK35XxlWL37DrlWr8S+UX6pMFx5WN8MR4qPzIE0xtbOdvwXhm8w3tgzpJmZbHA83dtPIX3k8gZSTjVsfsU9WfVDogA) center/cover"></picture>
         </div>
         <h3 class="h3 card__title">La bibliothèque</h3>
         <p class="card__desc">
@@ -317,7 +322,7 @@
 
       <article class="card" data-reveal>
         <div class="ph card__media ratio-4-3" data-reveal-img>
-          <img src="assets/img/spa-accueil.jpg" alt="Salon d'accueil du spa avec bureau et fauteuils" loading="lazy">
+          <picture><source type="image/avif" srcset="assets/img/spa-accueil-480.avif 480w, assets/img/spa-accueil-800.avif 800w, assets/img/spa-accueil-1280.avif 1280w, assets/img/spa-accueil-1400.avif 1400w" sizes="(max-width:600px) 350px, (max-width:1024px) 341px, 419px"><source type="image/webp" srcset="assets/img/spa-accueil-480.webp 480w, assets/img/spa-accueil-800.webp 800w, assets/img/spa-accueil-1280.webp 1280w, assets/img/spa-accueil-1400.webp 1400w" sizes="(max-width:600px) 350px, (max-width:1024px) 341px, 419px"><img src="assets/img/spa-accueil.jpg" alt="Salon d'accueil du spa avec bureau et fauteuils" loading="lazy" width="1400" height="1050" decoding="async" style="background:url(data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADwAQCdASoQAAwAAwBSJaACdADGboM55MAA/vCAd1FWKBS6GV7UcULKOFlkbNQYGqcyLGbiLTmvxn+mCYSqwpwa/8V/D0Z7WHqnXvUaod1Udc0B2iW40oyIRVF3tXJ/AAA=) center/cover"></picture>
         </div>
         <h3 class="h3 card__title">La salle de sport</h3>
         <p class="card__desc">
@@ -329,7 +334,7 @@
 
       <article class="card" data-reveal>
         <div class="ph card__media ratio-4-3" data-reveal-img>
-          <img src="assets/img/d-terrasse.jpg" alt="Terrasse et transats au bord du bassin" loading="lazy">
+          <picture><source type="image/avif" srcset="assets/img/d-terrasse-480.avif 480w, assets/img/d-terrasse-800.avif 800w" sizes="(max-width:600px) 350px, (max-width:1024px) 341px, 419px"><source type="image/webp" srcset="assets/img/d-terrasse-480.webp 480w, assets/img/d-terrasse-800.webp 800w" sizes="(max-width:600px) 350px, (max-width:1024px) 341px, 419px"><img src="assets/img/d-terrasse.jpg" alt="Terrasse et transats au bord du bassin" loading="lazy" width="800" height="800" decoding="async" style="background:url(data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADwAQCdASoQABAAAwBSJQBOgB08QeEcsGAA+X2T+M2ucr7IQWsAqpMNXYUbbQE6cnAcrhHwuTcDt5pHreI8i0ugxwKx7/YnsANwhEqmicg6hXHXjwv4bdX42eplGnCpbRLyGO5/QWpTAQqgR0m0wXgA) center/cover"></picture>
         </div>
         <h3 class="h3 card__title">Le jardin</h3>
         <p class="card__desc">
@@ -345,7 +350,7 @@
 <!-- ============================================================ APPEL FINAL -->
 <section class="cta-band">
   <div class="cta-band__media">
-    <img src="assets/img/cta-bienetre.jpg" alt="Bassin de soin et fauteuils du spa" loading="lazy">
+    <picture><source type="image/avif" srcset="assets/img/cta-bienetre-480.avif 480w, assets/img/cta-bienetre-800.avif 800w, assets/img/cta-bienetre-1280.avif 1280w, assets/img/cta-bienetre-1920.avif 1920w, assets/img/cta-bienetre-2000.avif 2000w" sizes="100vw"><source type="image/webp" srcset="assets/img/cta-bienetre-480.webp 480w, assets/img/cta-bienetre-800.webp 800w, assets/img/cta-bienetre-1280.webp 1280w, assets/img/cta-bienetre-1920.webp 1920w, assets/img/cta-bienetre-2000.webp 2000w" sizes="100vw"><img src="assets/img/cta-bienetre.jpg" alt="Bassin de soin et fauteuils du spa" loading="lazy" width="2000" height="1125" decoding="async" style="background:url(data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoQAAkAAwBSJQBOgCBS6tOF/gAA/mYf2TCEKMcnVK/hO5R/yUwodEIOuNt8YL1s4yua5Yaeb3PiAokmBz8S6x7cwAA=) center/cover"></picture>
   </div>
   <div class="cta-band__inner wrap wrap--narrow">
     <p class="eyebrow is-centered" data-reveal>Spa Wassaï</p>

@@ -13,3 +13,7 @@ seg/
 
 # Sorties temporaires
 *.log
+
+# Les JPEG d'origine restent versionnés : ils sont le repli ultime des
+# navigateurs qui ignorent AVIF et WebP, et ne sont téléchargés par personne
+# d'autre. Les dérivées le sont aussi — le site est déployé depuis ce dépôt.
