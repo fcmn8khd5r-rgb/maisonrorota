@@ -1503,3 +1503,16 @@ table.tbl .num { font-family: var(--font-display); font-size: 1.1rem; white-spac
   margin-bottom: 1.5rem;
 }
 .crumb a:hover { color: var(--brass-400); }
+
+/* L'incrustation de la pile d'images, sur tablette.
+   Son débord décoratif vaut −6 % de la colonne média. Au-delà de 900 px la
+   mise en page passe à deux colonnes et ce débord tombe loin du bord ; en
+   dessous de 620 px l'incrustation disparaît. Entre les deux, la colonne
+   touche presque le bord de l'écran et le débord passait DEHORS : la page
+   se mettait à défiler latéralement de neuf à treize pixels selon la
+   largeur — mesuré de 621 à 899 px, sur l'accueil et « bien-être ».
+   L'incrustation revient à l'intérieur sans être supprimée : elle chevauche
+   toujours l'image principale, ce qui est tout son objet. */
+@media (min-width: 621px) and (max-width: 899px) {
+  .stack-media__inset { right: 0; }
+}
