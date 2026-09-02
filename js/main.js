@@ -34,29 +34,85 @@
   }
 
   /* ------------------------------------------------ 1 bis. vidéo du hero
-     L'affiche s'affiche tout de suite ; la vidéo n'est téléchargée que si le
-     contexte s'y prête. Sur connexion lente, en mode économie de données ou
-     si l'utilisateur a demandé moins d'animations, aucun octet n'est chargé. */
+     L'affiche s'affiche tout de suite ; la vidéo se pose par-dessus dès
+     qu'elle peut jouer.
+
+     Cette vidéo ne partait pas à la première visite. Le déclenchement était
+     conditionné à navigator.connection.effectiveType — qui n'est pas une
+     mesure mais une estimation faite par Chrome à partir des échanges
+     récents. À la première visite il n'y en a pas, et l'API répond « 3g » :
+     elle le fait même contre un serveur local, en annonçant 650 ms de temps
+     d'aller-retour. Le test déclarait donc la connexion lente et la vidéo
+     n'obtenait jamais de source — networkState restait à zéro, rien n'était
+     même demandé. Au rechargement, Chrome ayant observé des réponses rapides,
+     l'estimation passait à « 4g » et tout fonctionnait : d'où un défaut
+     invisible en développement et présent chez chaque visiteur.
+
+     Restent deux gardes, parce que ce sont des choix explicites de la
+     personne et non des devinettes du navigateur : le mouvement réduit et
+     l'économiseur de données. Pour le reste on essaie, et l'on renonce sur
+     une mesure — si rien n'est jouable au bout du délai, on relâche le
+     fichier au lieu de continuer à le tirer. */
   var heroVideo = $(".hero__video");
   if (heroVideo) {
     var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-    var lente = conn && (conn.saveData ||
-                /2g|slow-2g|3g/.test(conn.effectiveType || ""));
-    if (!reduced && !lente) {
+    if (!reduced && !(conn && conn.saveData)) {
+      var ATTENTE_MAX = 10000;          // au-delà, on rend la bande passante
+      var lance = false, abandonne = false, minuteur = null;
+
+      var jouer = function () {
+        var p = heroVideo.play();
+        if (p && p.catch) p.catch(function () {
+          /* Refusée. Le cas courant : la page a été ouverte dans un onglet
+             d'arrière-plan depuis un autre site. On retentera au retour au
+             premier plan, ou au premier geste. */
+        });
+      };
+
       var demarre = function () {
+        if (lance) return;
+        lance = true;
         var large = window.innerWidth >= 900 && window.devicePixelRatio >= 1;
         var src = heroVideo.getAttribute(large ? "data-src-lg" : "data-src-sm");
         if (!src) return;
-        heroVideo.src = src;
         heroVideo.addEventListener("canplay", function () {
+          clearTimeout(minuteur);
+          if (abandonne) return;
           heroVideo.classList.add("is-on");
+          jouer();
         }, { once: true });
-        var p = heroVideo.play();
-        if (p && p.catch) p.catch(function () { /* lecture refusée : l'affiche reste */ });
+        heroVideo.src = src;
+        heroVideo.load();
+        jouer();
+        minuteur = setTimeout(function () {
+          if (heroVideo.readyState >= 3) return;   // arrivée entre-temps
+          abandonne = true;
+          heroVideo.removeAttribute("src");
+          heroVideo.load();                        // coupe le téléchargement
+        }, ATTENTE_MAX);
       };
-      // on attend que la page soit posée pour ne pas concurrencer l'affiche
-      if (document.readyState === "complete") setTimeout(demarre, 500);
-      else window.addEventListener("load", function () { setTimeout(demarre, 500); });
+
+      /* On part dès que l'affiche est là. Elle porte fetchpriority="high" et
+         gagne la course de toute façon : attendre « load » puis une demi-
+         seconde de plus, comme auparavant, ne protégeait rien et retardait la
+         vidéo de plusieurs secondes sur une page chargée d'images. */
+      var affiche = $(".hero__media img");
+      if (!affiche || affiche.complete) demarre();
+      else {
+        affiche.addEventListener("load", demarre, { once: true });
+        affiche.addEventListener("error", demarre, { once: true });
+        setTimeout(demarre, 2000);                 // filet
+      }
+
+      var rattrape = function () {
+        if (!abandonne && heroVideo.paused && heroVideo.getAttribute("src")) jouer();
+      };
+      document.addEventListener("visibilitychange", function () {
+        if (!document.hidden) rattrape();
+      });
+      ["pointerdown", "keydown", "scroll"].forEach(function (evt) {
+        window.addEventListener(evt, rattrape, { once: true, passive: true });
+      });
     }
   }
 
