@@ -1,0 +1,39 @@
+# Maison Rorota — configuration de déploiement
+#
+# Déclaré ici plutôt que dans l'interface : sur Netlify, netlify.toml prend le
+# pas sur les réglages du tableau de bord. Le comportement du site ne dépend
+# donc plus d'un réglage qu'on aurait oublié, ou qu'un autre aurait changé.
+
+[build]
+  # Site statique : rien à construire. La commande est déclarée explicitement,
+  # sans quoi une commande restée dans l'interface continuerait de tourner.
+  command = "echo 'site statique : rien a construire'"
+  publish = "."
+
+[build.processing]
+  skip_processing = true
+
+# Les dérivées d'images portent leur largeur dans leur nom, les polices leur
+# graisse : ces adresses ne changent jamais de contenu, on les garde un an.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
