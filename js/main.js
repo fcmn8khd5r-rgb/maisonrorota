@@ -92,8 +92,27 @@
       if (abandonne) return;
       heroVideo.classList.add("is-on");
     };
-    heroVideo.addEventListener("playing", montrer, { once: true });
+    heroVideo.addEventListener("playing", montrer);
     if (!heroVideo.paused && heroVideo.readyState >= 3) montrer();
+
+    /* Et le chemin inverse, qui manquait.
+
+       La classe is-on ne faisait que s'ajouter : une fois posée, elle restait.
+       Or elle fait deux choses — elle montre la vidéo, et elle arrête le Ken
+       Burns de l'affiche (voir « :has(.hero__video.is-on) » dans le CSS). Si
+       la lecture démarrait puis se suspendait — un Mac en économie d'énergie,
+       Safari qui retire l'autorisation après les premières images — on restait
+       donc avec une image de vidéo parfaitement figée, et plus aucun mouvement
+       nulle part. L'écran d'accueil paraissait en panne, et il fallait cliquer
+       pour le réveiller.
+
+       En rendant la classe réversible, une vidéo suspendue redonne la main à
+       l'affiche, qui reprend sa dérive : le visiteur voit toujours quelque
+       chose bouger, qu'on lui accorde la lecture ou non. C'est pourquoi
+       l'écoute de « playing » n'est plus « once » : il faut pouvoir revenir. */
+    heroVideo.addEventListener("pause", function () {
+      heroVideo.classList.remove("is-on");
+    });
 
     var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
     if (conn && conn.saveData) {
@@ -115,6 +134,24 @@
         heroVideo.addEventListener(evt, jouer);
       });
       jouer();
+
+      /* Quelques essais espacés, le temps que le navigateur veuille bien.
+
+         Les événements de chargement ne se produisent qu'une fois : si le
+         refus tombe sur chacun d'eux, plus rien ne retente avant que la
+         personne ne touche l'écran. Or l'autorisation n'est pas figée — elle
+         peut être accordée quand l'onglet passe au premier plan, quand le
+         mode économie d'énergie est levé, ou simplement un peu plus tard.
+         Six secondes d'essais toutes les demi-secondes ne coûtent rien : un
+         play() refusé rend une promesse rejetée, que l'on ignore. */
+      var essais = 0;
+      var relance = setInterval(function () {
+        if (abandonne || !heroVideo.paused || ++essais > 12) {
+          clearInterval(relance);
+          return;
+        }
+        jouer();
+      }, 500);
 
       minuteur = setTimeout(function () {
         if (heroVideo.readyState >= 3) return;   // arrivée entre-temps
